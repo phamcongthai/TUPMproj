@@ -27,6 +27,8 @@ import javax.inject.Singleton
 
 interface LocationRepository {
     fun getLocationState(): StateFlow<LocationUiState>
+    fun shouldShowPermissionPopup(): Flow<Boolean>
+    suspend fun markPopupShown()
     suspend fun startLocationUpdate()
     suspend fun refreshLocation()
     fun clearCache()
@@ -45,6 +47,14 @@ class LocationRepositoryImpl @Inject constructor(
     
     private val _locationState = MutableStateFlow<LocationUiState>(LocationUiState.Idle)
     override fun getLocationState(): StateFlow<LocationUiState> = _locationState.asStateFlow()
+
+    override fun shouldShowPermissionPopup(): Flow<Boolean> = authPreference.isLocationPopupShown().map { shown ->
+        !shown
+    }
+
+    override suspend fun markPopupShown() {
+        authPreference.setLocationPopupShown(true)
+    }
 
     override suspend fun startLocationUpdate() {
         val cachedAddress = authPreference.getAddress().first()

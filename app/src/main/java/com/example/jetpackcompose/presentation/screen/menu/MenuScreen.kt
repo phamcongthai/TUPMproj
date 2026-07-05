@@ -38,16 +38,8 @@ fun MenuScreen(
     val searchQuery by viewModel.searchQuery.collectAsState()
 
     var selectedItemForDialog by remember { mutableStateOf<MenuItem?>(null) }
-    val snackbarHostState = remember { SnackbarHostState() }
-
-    LaunchedEffect(Unit) {
-        homeViewModel.toastMessage.collect { message ->
-            snackbarHostState.showSnackbar(message)
-        }
-    }
 
     Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             Column(modifier = Modifier.background(Color.White)) {
                 Text(

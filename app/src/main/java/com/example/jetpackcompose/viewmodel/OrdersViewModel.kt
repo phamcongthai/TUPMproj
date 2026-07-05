@@ -6,6 +6,7 @@ import com.example.jetpackcompose.data.remote.dto.OrderResponse
 import com.example.jetpackcompose.data.repository.FoodRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -13,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class OrdersViewModel @Inject constructor(
-    private val foodRepository: FoodRepository
+    private val foodRepository: FoodRepository,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     private val _uncompletedOrders = MutableStateFlow<UiState<List<OrderResponse>>>(UiState.Loading)
@@ -24,9 +26,6 @@ class OrdersViewModel @Inject constructor(
 
     private val _cancelledOrders = MutableStateFlow<UiState<List<OrderResponse>>>(UiState.Loading)
     val cancelledOrders = _cancelledOrders.asStateFlow()
-
-    private val _toastMessage = MutableSharedFlow<String>()
-    val toastMessage = _toastMessage.asSharedFlow()
 
     init {
         fetchAllOrders()
@@ -79,13 +78,17 @@ class OrdersViewModel @Inject constructor(
             foodRepository.completePreOrder(orderId).collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
-                        _toastMessage.emit("Đã nhận hàng thành công!")
+                        notificationManager.hideLoading()
+                        notificationManager.showSuccess("Đã nhận hàng thành công!")
                         fetchAllOrders()
                     }
                     is Resource.Error -> {
-                        _toastMessage.emit(resource.message ?: "Có lỗi xảy ra")
+                        notificationManager.hideLoading()
+                        notificationManager.showError(resource.message ?: "Có lỗi xảy ra khi xác nhận đơn hàng")
                     }
-                    is Resource.Loading -> {}
+                    is Resource.Loading -> {
+                        notificationManager.showLoading()
+                    }
                 }
             }
         }

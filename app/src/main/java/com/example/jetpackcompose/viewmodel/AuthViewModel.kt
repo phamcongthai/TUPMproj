@@ -6,6 +6,7 @@ import com.example.jetpackcompose.data.datastore.AuthPreference
 import com.example.jetpackcompose.data.remote.dto.UserDto
 import com.example.jetpackcompose.data.repository.AuthRepository
 import com.example.jetpackcompose.utils.Resource
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -14,7 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class AuthViewModel @Inject constructor(
     private val authPreference: AuthPreference,
-    private val authRepository: AuthRepository
+    private val authRepository: AuthRepository,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     private val _authState = MutableStateFlow<AuthState>(AuthState.Loading)
@@ -49,8 +51,9 @@ class AuthViewModel @Inject constructor(
                         }
                     }
                     is Resource.Error -> {
-                        // safeApiCall catches exceptions, if it's 401 and TokenAuthenticator failed
-                        // it will reach here as Error.
+                        if (_authState.value !is AuthState.Unauthenticated) {
+                            notificationManager.showWarning("Phiên đăng nhập hết hạn, vui lòng đăng nhập lại.")
+                        }
                         _authState.value = AuthState.Unauthenticated
                     }
                     is Resource.Loading -> {

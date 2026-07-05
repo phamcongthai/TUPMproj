@@ -7,6 +7,7 @@ import com.example.jetpackcompose.data.remote.dto.*
 import com.example.jetpackcompose.data.repository.ReviewRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -15,7 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class ReviewViewModel @Inject constructor(
     private val reviewRepository: ReviewRepository,
-    private val authPreference: AuthPreference
+    private val authPreference: AuthPreference,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     private val _reviewsState = MutableStateFlow<UiState<List<ReviewDto>>>(UiState.Idle)
@@ -94,9 +96,10 @@ class ReviewViewModel @Inject constructor(
 
     fun createReview(menuItemId: String, rating: Int, comment: String) {
         viewModelScope.launch {
-            val user = currentUser.value?.name ?: "Anonymous"
+            val user = currentUser.value
             val request = CreateReviewRequest(
-                user = user,
+                userId = user?.id,
+                user = user?.name ?: "Anonymous",
                 menuItemId = menuItemId,
                 rating = rating,
                 comment = comment
@@ -126,12 +129,22 @@ class ReviewViewModel @Inject constructor(
 
     private suspend fun <T> handleActionResult(resource: Resource<T>, menuItemId: String) {
         when (resource) {
-            is Resource.Loading -> _actionState.emit(UiState.Loading)
+            is Resource.Loading -> {
+                notificationManager.showLoading()
+                _actionState.emit(UiState.Loading)
+            }
             is Resource.Success -> {
+                notificationManager.hideLoading()
+                notificationManager.showSuccess("Thực hiện thành công!")
                 _actionState.emit(UiState.Success(Unit))
                 getReviews(menuItemId) // Refresh list
             }
-            is Resource.Error -> _actionState.emit(UiState.Error(resource.message ?: "Action failed"))
+            is Resource.Error -> {
+                notificationManager.hideLoading()
+                val errorMsg = resource.message ?: "Thao tác thất bại"
+                notificationManager.showError(errorMsg)
+                _actionState.emit(UiState.Error(errorMsg))
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ import com.example.jetpackcompose.data.repository.CartRepository
 import com.example.jetpackcompose.data.repository.FoodRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -20,6 +21,7 @@ import javax.inject.Inject
 class FoodDetailViewModel @Inject constructor(
     private val foodRepository: FoodRepository,
     private val cartRepository: CartRepository,
+    private val notificationManager: NotificationManager,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -39,9 +41,6 @@ class FoodDetailViewModel @Inject constructor(
 
     private val _addToCartEvent = MutableSharedFlow<Boolean>()
     val addToCartEvent = _addToCartEvent.asSharedFlow()
-
-    private val _toastMessage = MutableSharedFlow<String>()
-    val toastMessage = _toastMessage.asSharedFlow()
 
     init {
         fetchMenuItem()
@@ -111,7 +110,7 @@ class FoodDetailViewModel @Inject constructor(
             val item = state.data
             if (item.status == "out_of_stock") {
                 viewModelScope.launch {
-                    _toastMessage.emit("Món ăn hiện đã hết hàng.")
+                    notificationManager.showWarning("Món ăn hiện đã hết hàng.")
                 }
                 return
             }
@@ -129,6 +128,7 @@ class FoodDetailViewModel @Inject constructor(
                         toppings = _selectedToppings.value
                     )
                 )
+                notificationManager.showSuccess("Đã thêm ${item.name} vào giỏ hàng")
                 _addToCartEvent.emit(true)
                 resetInputs()
             }

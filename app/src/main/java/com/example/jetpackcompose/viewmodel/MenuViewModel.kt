@@ -6,6 +6,7 @@ import com.example.jetpackcompose.data.model.MenuItem
 import com.example.jetpackcompose.data.repository.FoodRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -13,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MenuViewModel @Inject constructor(
-    private val foodRepository: FoodRepository
+    private val foodRepository: FoodRepository,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     private val _categoriesState = MutableStateFlow<UiState<List<String>>>(UiState.Loading)
@@ -65,7 +67,11 @@ class MenuViewModel @Inject constructor(
                         list.addAll(resource.data ?: emptyList())
                         UiState.Success(list)
                     }
-                    is Resource.Error -> UiState.Error(resource.message ?: "Error")
+                    is Resource.Error -> {
+                        val errorMsg = resource.message ?: "Không thể tải danh mục"
+                        notificationManager.showError(errorMsg)
+                        UiState.Error(errorMsg)
+                    }
                     is Resource.Loading -> UiState.Loading
                 }
             }
@@ -77,7 +83,11 @@ class MenuViewModel @Inject constructor(
             foodRepository.getMenuItems(null).collect { resource ->
                 _allMenuItems.value = when (resource) {
                     is Resource.Success -> UiState.Success(resource.data ?: emptyList())
-                    is Resource.Error -> UiState.Error(resource.message ?: "Error")
+                    is Resource.Error -> {
+                        val errorMsg = resource.message ?: "Không thể tải thực đơn"
+                        notificationManager.showError(errorMsg)
+                        UiState.Error(errorMsg)
+                    }
                     is Resource.Loading -> UiState.Loading
                 }
             }

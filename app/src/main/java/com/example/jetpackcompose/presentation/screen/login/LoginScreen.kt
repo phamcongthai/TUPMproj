@@ -48,8 +48,6 @@ fun LoginScreen(
         if (loginState is UiState.Success) {
             onLoginSuccess()
             viewModel.resetState()
-        } else if (loginState is UiState.Error) {
-            Toast.makeText(context, (loginState as UiState.Error).message, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -182,7 +180,8 @@ fun LoginScreen(
                             )
                         }
                     } catch (e: Exception) {
-                        Toast.makeText(context, "Google Sign In Failed", Toast.LENGTH_SHORT).show()
+                        // handled by viewModel if we use credential manager correctly,
+                        // but here we just catch the exception
                     }
                 }
             },

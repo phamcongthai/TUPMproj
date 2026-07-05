@@ -1,7 +1,6 @@
 package com.example.jetpackcompose.di
 
 import com.example.jetpackcompose.data.remote.api.ApiService
-import com.example.jetpackcompose.data.remote.api.ReviewApi
 import com.example.jetpackcompose.data.remote.interceptor.AuthInterceptor
 import com.example.jetpackcompose.data.remote.interceptor.TokenAuthenticator
 import dagger.Module
@@ -61,16 +60,5 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
-    }
-
-    @Provides
-    @Singleton
-    fun provideReviewApi(okHttpClient: OkHttpClient): ReviewApi {
-        return Retrofit.Builder()
-            .baseUrl("https://smart-menu-backend-r686.onrender.com")
-            .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(ReviewApi::class.java)
     }
 }

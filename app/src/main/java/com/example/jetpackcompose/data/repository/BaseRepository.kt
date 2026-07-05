@@ -2,6 +2,7 @@ package com.example.jetpackcompose.data.repository
 
 import com.example.jetpackcompose.data.remote.dto.ApiResponse
 import com.example.jetpackcompose.utils.Resource
+import com.google.gson.Gson
 import retrofit2.Response
 
 abstract class BaseRepository {
@@ -26,8 +27,14 @@ abstract class BaseRepository {
                 }
             } else {
                 // Handle error body if available
-                val errorMsg = response.errorBody()?.string() ?: response.message()
-                Resource.Error(errorMsg)
+                val errorJson = response.errorBody()?.string()
+                val message = try {
+                    val apiResponse = Gson().fromJson(errorJson, ApiResponse::class.java)
+                    apiResponse.message ?: response.message()
+                } catch (_: Exception) {
+                    response.message()
+                }
+                Resource.Error(message)
             }
         } catch (e: Exception) {
             Resource.Error(e.message ?: "An unknown error occurred")

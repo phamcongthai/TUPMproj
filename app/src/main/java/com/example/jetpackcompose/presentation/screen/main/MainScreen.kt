@@ -8,6 +8,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -28,18 +29,17 @@ fun MainScreen(
     onNavigateToCheckout: () -> Unit
 ) {
     val navController = rememberNavController()
-    var showPermissionPopup by remember { mutableStateOf(true) }
-    val snackbarHostState = remember { SnackbarHostState() }
-
+    val homeViewModel: HomeViewModel = hiltViewModel()
+    val showPermissionPopup by homeViewModel.shouldShowLocationPopup.collectAsStateWithLifecycle()
+    
     val permissionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
-        showPermissionPopup = false
+        homeViewModel.markLocationPopupShown()
     }
 
     Scaffold(
-        bottomBar = { BottomNavigationBar(navController) },
-        snackbarHost = { SnackbarHost(snackbarHostState) }
+        bottomBar = { BottomNavigationBar(navController) }
     ) { innerPadding ->
         NavHost(
             navController = navController,
@@ -85,7 +85,7 @@ fun MainScreen(
                 onAllow = {
                     permissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
                 },
-                onDismiss = { showPermissionPopup = false }
+                onDismiss = { homeViewModel.markLocationPopupShown() }
             )
         }
     }

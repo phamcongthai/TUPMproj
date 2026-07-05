@@ -184,9 +184,13 @@ fun ReviewCard(
                 }
                 
                 if (isCurrentUser) {
-                    Box {
+                    Box(modifier = Modifier.wrapContentSize(Alignment.TopEnd)) {
                         IconButton(onClick = { showMenu = true }) {
-                            Icon(Icons.Default.MoreVert, contentDescription = null)
+                            Icon(
+                                imageVector = Icons.Default.MoreVert,
+                                contentDescription = "Review options",
+                                tint = Color.Gray
+                            )
                         }
                         DropdownMenu(
                             expanded = showMenu,
@@ -202,12 +206,12 @@ fun ReviewCard(
                                 leadingIcon = { Icon(Icons.Default.Edit, contentDescription = null) }
                             )
                             DropdownMenuItem(
-                                text = { Text("Xóa") },
+                                text = { Text("Xóa", color = Color.Red) },
                                 onClick = {
                                     showMenu = false
                                     onDelete()
                                 },
-                                leadingIcon = { Icon(Icons.Default.Delete, contentDescription = null) }
+                                leadingIcon = { Icon(Icons.Default.Delete, contentDescription = null, tint = Color.Red) }
                             )
                         }
                     }

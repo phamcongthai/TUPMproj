@@ -7,6 +7,7 @@ import com.example.jetpackcompose.data.repository.AuthRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
 import com.example.jetpackcompose.utils.ValidationUtils
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -14,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RegisterViewModel @Inject constructor(
-    private val repository: AuthRepository
+    private val repository: AuthRepository,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     private val _name = MutableStateFlow("")
@@ -69,9 +71,21 @@ class RegisterViewModel @Inject constructor(
             val request = RegisterRequest(_name.value, _email.value, _password.value, _phone.value)
             repository.register(request).collect { resource ->
                 when (resource) {
-                    is Resource.Success -> _registerState.value = UiState.Success(Unit)
-                    is Resource.Error -> _registerState.value = UiState.Error(resource.message ?: "Error")
-                    is Resource.Loading -> _registerState.value = UiState.Loading
+                    is Resource.Success -> {
+                        notificationManager.hideLoading()
+                        notificationManager.showSuccess("Đăng ký thành công! Hãy đăng nhập.")
+                        _registerState.value = UiState.Success(Unit)
+                    }
+                    is Resource.Error -> {
+                        notificationManager.hideLoading()
+                        val errorMsg = resource.message ?: "Đăng ký thất bại"
+                        notificationManager.showError(errorMsg)
+                        _registerState.value = UiState.Error(errorMsg)
+                    }
+                    is Resource.Loading -> {
+                        notificationManager.showLoading()
+                        _registerState.value = UiState.Loading
+                    }
                 }
             }
         }

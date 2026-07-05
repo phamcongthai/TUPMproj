@@ -8,6 +8,7 @@ import com.example.jetpackcompose.data.repository.CartRepository
 import com.example.jetpackcompose.data.repository.FoodRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -16,7 +17,8 @@ import javax.inject.Inject
 @HiltViewModel
 class CartViewModel @Inject constructor(
     private val cartRepository: CartRepository,
-    private val foodRepository: FoodRepository
+    private val foodRepository: FoodRepository,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     val cartItems = cartRepository.getCartItems().stateIn(
@@ -55,18 +57,21 @@ class CartViewModel @Inject constructor(
     fun removeItem(item: CartItem) {
         viewModelScope.launch {
             cartRepository.removeFromCart(item)
+            notificationManager.showInfo("Đã xóa ${item.name} khỏi giỏ hàng")
         }
     }
 
     fun clearCart() {
         viewModelScope.launch {
             cartRepository.clearCart()
+            notificationManager.showInfo("Đã làm trống giỏ hàng")
         }
     }
 
     fun updateItem(oldItem: CartItem, newItem: CartItem) {
         viewModelScope.launch {
             cartRepository.replaceCartItem(oldItem, newItem)
+            notificationManager.showSuccess("Đã cập nhật ${newItem.name}")
         }
     }
 }

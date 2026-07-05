@@ -9,11 +9,18 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.jetpackcompose.navigation.AppNavigation
+import com.example.jetpackcompose.presentation.components.AppNotificationHost
 import com.example.jetpackcompose.ui.theme.JetpackComposeTheme
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var notificationManager: NotificationManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,6 +32,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     AppNavigation()
+                    AppNotificationHost(notificationManager = notificationManager)
                 }
             }
         }

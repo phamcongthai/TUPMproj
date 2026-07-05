@@ -50,21 +50,12 @@ fun HomeScreen(
     val context = LocalContext.current
     val activity = context as? Activity
     var selectedItemForDialog by remember { mutableStateOf<MenuItem?>(null) }
-    val snackbarHostState = remember { SnackbarHostState() }
 
     LaunchedEffect(Unit) {
         viewModel.startLocationUpdate()
     }
 
-    LaunchedEffect(Unit) {
-        viewModel.toastMessage.collect { message ->
-            snackbarHostState.showSnackbar(message)
-        }
-    }
-
-    Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) }
-    ) { innerPadding ->
+    Scaffold { innerPadding ->
         LocationPermissionHandler(viewModel = viewModel) {
             activity?.let {
                 viewModel.checkGpsAndStartLocation(it)

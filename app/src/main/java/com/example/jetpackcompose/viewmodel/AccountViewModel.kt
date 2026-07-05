@@ -10,6 +10,7 @@ import com.example.jetpackcompose.data.repository.AuthRepository
 import com.example.jetpackcompose.data.repository.LocationRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -19,7 +20,8 @@ import javax.inject.Inject
 class AccountViewModel @Inject constructor(
     private val authPreference: AuthPreference,
     private val authRepository: AuthRepository,
-    private val locationRepository: LocationRepository
+    private val locationRepository: LocationRepository,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     val user = authPreference.userData.stateIn(
@@ -58,26 +60,57 @@ class AccountViewModel @Inject constructor(
             authRepository.updateUser(userId, request).collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
+                        notificationManager.hideLoading()
                         val updatedUser = resource.data!!
                         authPreference.saveUser(updatedUser)
+                        notificationManager.showSuccess("Cập nhật thông tin thành công!")
                         _updateProfileState.value = UiState.Success(updatedUser)
                     }
-                    is Resource.Error -> _updateProfileState.value = UiState.Error(resource.message ?: "Update failed")
-                    is Resource.Loading -> _updateProfileState.value = UiState.Loading
+                    is Resource.Error -> {
+                        notificationManager.hideLoading()
+                        val errorMsg = resource.message ?: "Cập nhật thất bại"
+                        notificationManager.showError(errorMsg)
+                        _updateProfileState.value = UiState.Error(errorMsg)
+                    }
+                    is Resource.Loading -> {
+                        notificationManager.showLoading()
+                        _updateProfileState.value = UiState.Loading
+                    }
                 }
             }
         }
     }
 
-    fun updatePassword(oldPass: String, newPass: String) {
+    fun updatePassword(oldPass: String, newPass: String, confirmPass: String) {
+        if (newPass.length < 8) {
+            viewModelScope.launch { notificationManager.showError("Mật khẩu mới phải có ít nhất 8 ký tự") }
+            return
+        }
+        if (newPass != confirmPass) {
+            viewModelScope.launch { notificationManager.showError("Mật khẩu xác nhận không khớp") }
+            return
+        }
+
         val email = user.value.email ?: return
         viewModelScope.launch {
             val request = UpdatePasswordRequest(email, oldPass, newPass)
             authRepository.updatePassword(request).collect { resource ->
                 when (resource) {
-                    is Resource.Success -> _updatePasswordState.value = UiState.Success(Unit)
-                    is Resource.Error -> _updatePasswordState.value = UiState.Error(resource.message ?: "Failed")
-                    is Resource.Loading -> _updatePasswordState.value = UiState.Loading
+                    is Resource.Success -> {
+                        notificationManager.hideLoading()
+                        notificationManager.showSuccess("Đổi mật khẩu thành công!")
+                        _updatePasswordState.value = UiState.Success(Unit)
+                    }
+                    is Resource.Error -> {
+                        notificationManager.hideLoading()
+                        val errorMsg = resource.message ?: "Đổi mật khẩu thất bại"
+                        notificationManager.showError(errorMsg)
+                        _updatePasswordState.value = UiState.Error(errorMsg)
+                    }
+                    is Resource.Loading -> {
+                        notificationManager.showLoading()
+                        _updatePasswordState.value = UiState.Loading
+                    }
                 }
             }
         }

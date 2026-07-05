@@ -58,8 +58,6 @@ fun OrderDetailScreen(
     val context = LocalContext.current
     val scrollState = rememberScrollState()
 
-    val snackbarHostState = remember { SnackbarHostState() }
-
     val menuId = (state as? UiState.Success)?.data?.id ?: ""
 
     LaunchedEffect(menuId) {
@@ -70,36 +68,20 @@ fun OrderDetailScreen(
 
     LaunchedEffect(Unit) {
         reviewViewModel.actionState.collect { actionState ->
-            when (actionState) {
-                is UiState.Success -> {
-                    snackbarHostState.showSnackbar("Thành công")
-                    editingReview = null
-                    deletingReview = null
-                }
-                is UiState.Error -> {
-                    snackbarHostState.showSnackbar(actionState.message)
-                }
-                else -> {}
+            if (actionState is UiState.Success) {
+                editingReview = null
+                deletingReview = null
             }
         }
     }
 
     LaunchedEffect(Unit) {
-        viewModel.addToCartEvent.collect { success ->
-            if (success) {
-                Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    LaunchedEffect(Unit) {
-        viewModel.toastMessage.collect { message ->
-            snackbarHostState.showSnackbar(message)
+        viewModel.addToCartEvent.collect { _ ->
+            // Success notification is now handled by the viewModel
         }
     }
 
     Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) },
         bottomBar = {
             if (state is UiState.Success) {
                 val item = (state as UiState.Success).data
@@ -280,7 +262,7 @@ fun OrderDetailScreen(
                             }
 
                             Row(
-                                modifier = Modifier.fillMaxWidth(),
+                                modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.Top
                             ) {
@@ -455,9 +437,16 @@ fun OrderDetailScreen(
                                         } else {
                                             Column {
                                                 filteredReviews.forEach { review ->
+                                                    val isCurrentUser = remember(review, currentUser) {
+                                                        val rUserId = review.realUserId
+                                                        val cUserId = currentUser?.id
+                                                        
+                                                        (rUserId != null && rUserId != "null" && rUserId != "undefined" && rUserId == cUserId) || 
+                                                        ((rUserId == null || rUserId == "null" || rUserId == "undefined") && review.user == currentUser?.name)
+                                                    }
                                                     ReviewCard(
                                                         review = review,
-                                                        isCurrentUser = review.userId == currentUser?.id,
+                                                        isCurrentUser = isCurrentUser,
                                                         onEdit = { editingReview = review },
                                                         onDelete = { deletingReview = review }
                                                     )
@@ -547,7 +536,7 @@ fun OrderDetailScreen(
                             
                             Button(
                                 onClick = { 
-                                    reviewViewModel.updateReview(review.id ?: "", menuId, localRating, localComment)
+                                    reviewViewModel.updateReview(review.realId ?: "", menuId, localRating, localComment)
                                 },
                                 modifier = Modifier.fillMaxWidth()
                             ) {
@@ -572,7 +561,7 @@ fun OrderDetailScreen(
                     confirmButton = {
                         TextButton(
                             onClick = { 
-                                reviewViewModel.deleteReview(review.id ?: "", menuId)
+                                reviewViewModel.deleteReview(review.realId ?: "", menuId)
                             },
                             colors = ButtonDefaults.textButtonColors(contentColor = Color.Red)
                         ) {

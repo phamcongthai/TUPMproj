@@ -42,11 +42,8 @@ fun RegisterScreen(
 
     LaunchedEffect(registerState) {
         if (registerState is UiState.Success) {
-            Toast.makeText(context, "Đăng ký thành công", Toast.LENGTH_SHORT).show()
             onNavigateToLogin()
             viewModel.resetState()
-        } else if (registerState is UiState.Error) {
-            Toast.makeText(context, (registerState as UiState.Error).message, Toast.LENGTH_LONG).show()
         }
     }
 

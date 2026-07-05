@@ -9,6 +9,7 @@ import com.example.jetpackcompose.data.repository.AuthRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
 import com.example.jetpackcompose.utils.ValidationUtils
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -17,7 +18,8 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val repository: AuthRepository,
-    private val authPreference: AuthPreference
+    private val authPreference: AuthPreference,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     private val _email = MutableStateFlow("")
@@ -50,22 +52,29 @@ class LoginViewModel @Inject constructor(
             repository.login(LoginRequest(_email.value, _password.value)).collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
+                        notificationManager.hideLoading()
                         val authData = resource.data
                         if (authData?.accessToken != null && authData.user != null) {
                             authPreference.saveTokens(
                                 authData.accessToken,
-                                authData.refreshToken ?: "" // Handle null if sent via Cookie
+                                authData.refreshToken ?: ""
                             )
                             authPreference.saveUser(authData.user)
+                            notificationManager.showSuccess("Đăng nhập thành công! Chào mừng trở lại.")
                             _loginState.value = UiState.Success(Unit)
                         } else {
+                            notificationManager.showError("Dữ liệu phản hồi không hợp lệ")
                             _loginState.value = UiState.Error("Dữ liệu phản hồi không hợp lệ")
                         }
                     }
                     is Resource.Error -> {
-                        _loginState.value = UiState.Error(resource.message ?: "Login Failed")
+                        notificationManager.hideLoading()
+                        val errorMsg = resource.message ?: "Đăng nhập thất bại"
+                        notificationManager.showError(errorMsg)
+                        _loginState.value = UiState.Error(errorMsg)
                     }
                     is Resource.Loading -> {
+                        notificationManager.showLoading()
                         _loginState.value = UiState.Loading
                     }
                 }
@@ -78,22 +87,29 @@ class LoginViewModel @Inject constructor(
             repository.googleLogin(GoogleLoginRequest(email, name, picture)).collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
+                        notificationManager.hideLoading()
                         val authData = resource.data
                         if (authData?.accessToken != null && authData.user != null) {
                             authPreference.saveTokens(
                                 authData.accessToken,
-                                authData.refreshToken ?: "" // Handle null if sent via Cookie
+                                authData.refreshToken ?: ""
                             )
                             authPreference.saveUser(authData.user)
+                            notificationManager.showSuccess("Đăng nhập Google thành công!")
                             _loginState.value = UiState.Success(Unit)
                         } else {
+                            notificationManager.showError("Dữ liệu Google không hợp lệ")
                             _loginState.value = UiState.Error("Dữ liệu phản hồi không hợp lệ")
                         }
                     }
                     is Resource.Error -> {
-                        _loginState.value = UiState.Error(resource.message ?: "Google Login Failed")
+                        notificationManager.hideLoading()
+                        val errorMsg = resource.message ?: "Google Login Failed"
+                        notificationManager.showError(errorMsg)
+                        _loginState.value = UiState.Error(errorMsg)
                     }
                     is Resource.Loading -> {
+                        notificationManager.showLoading()
                         _loginState.value = UiState.Loading
                     }
                 }

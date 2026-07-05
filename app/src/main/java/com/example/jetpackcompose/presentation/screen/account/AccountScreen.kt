@@ -1,6 +1,5 @@
 package com.example.jetpackcompose.presentation.screen.account
 
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -31,7 +30,6 @@ import com.example.jetpackcompose.viewmodel.AccountViewModel
 @Composable
 fun AccountScreen(viewModel: AccountViewModel, onLogout: () -> Unit) {
     val user by viewModel.user.collectAsState()
-    val context = LocalContext.current
     
     var showEditProfile by remember { mutableStateOf(false) }
     var showChangePassword by remember { mutableStateOf(false) }
@@ -178,11 +176,9 @@ fun EditProfileModal(viewModel: AccountViewModel, onDismiss: () -> Unit) {
     var avatar by remember { mutableStateOf(user.avatar ?: "") }
     
     val updateState by viewModel.updateProfileState.collectAsState()
-    val context = LocalContext.current
 
     LaunchedEffect(updateState) {
         if (updateState is UiState.Success) {
-            Toast.makeText(context, "Cập nhật thành công", Toast.LENGTH_SHORT).show()
             viewModel.resetStates()
             onDismiss()
         }
@@ -234,15 +230,11 @@ fun ChangePasswordModal(viewModel: AccountViewModel, onDismiss: () -> Unit) {
     var confirmPass by remember { mutableStateOf("") }
     
     val updateState by viewModel.updatePasswordState.collectAsState()
-    val context = LocalContext.current
 
     LaunchedEffect(updateState) {
         if (updateState is UiState.Success) {
-            Toast.makeText(context, "Đổi mật khẩu thành công", Toast.LENGTH_SHORT).show()
             viewModel.resetStates()
             onDismiss()
-        } else if (updateState is UiState.Error) {
-            Toast.makeText(context, (updateState as UiState.Error).message, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -260,11 +252,7 @@ fun ChangePasswordModal(viewModel: AccountViewModel, onDismiss: () -> Unit) {
             Spacer(modifier = Modifier.height(24.dp))
             Button(
                 onClick = { 
-                    if (newPass.length >= 8 && newPass == confirmPass) {
-                        viewModel.updatePassword(oldPass, newPass)
-                    } else {
-                        Toast.makeText(context, "Mật khẩu không hợp lệ hoặc không khớp", Toast.LENGTH_SHORT).show()
-                    }
+                    viewModel.updatePassword(oldPass, newPass, confirmPass)
                 },
                 modifier = Modifier.fillMaxWidth().height(50.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF9800)),

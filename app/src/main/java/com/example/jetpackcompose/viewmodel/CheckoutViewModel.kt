@@ -13,6 +13,7 @@ import com.example.jetpackcompose.data.repository.FoodRepository
 import com.example.jetpackcompose.utils.Constants
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -30,6 +31,7 @@ class CheckoutViewModel @Inject constructor(
     private val cartRepository: CartRepository,
     private val foodRepository: FoodRepository,
     private val authPreference: AuthPreference,
+    private val notificationManager: NotificationManager,
     @ApplicationContext private val context: Context
 ) : ViewModel() {
 
@@ -193,13 +195,19 @@ class CheckoutViewModel @Inject constructor(
         val outOfStockItems = cartItems.value.filter { it.status == "out_of_stock" }
         if (outOfStockItems.isNotEmpty()) {
             viewModelScope.launch {
-                _toastMessage.emit("Giỏ hàng chứa món đã hết hàng. Vui lòng kiểm tra lại.")
+                notificationManager.showWarning("Giỏ hàng chứa món đã hết hàng. Vui lòng kiểm tra lại.")
             }
             return
         }
 
-        if (_method.value == DeliveryMethod.SHIP && _address.value.isEmpty()) return
-        if (_method.value == DeliveryMethod.PICKUP && _pickupTime.value.isEmpty()) return
+        if (_method.value == DeliveryMethod.SHIP && _address.value.isEmpty()) {
+            viewModelScope.launch { notificationManager.showError("Vui lòng nhập địa chỉ giao hàng") }
+            return
+        }
+        if (_method.value == DeliveryMethod.PICKUP && _pickupTime.value.isEmpty()) {
+            viewModelScope.launch { notificationManager.showError("Vui lòng chọn thời gian đến lấy") }
+            return
+        }
 
         viewModelScope.launch {
             val customerId = authPreference.getUserId().first() ?: ""
@@ -232,15 +240,22 @@ class CheckoutViewModel @Inject constructor(
 
             foodRepository.createPreOrder(request).collect { resource ->
                 when (resource) {
-                    is Resource.Loading -> _checkoutState.value = UiState.Loading
+                    is Resource.Loading -> {
+                        notificationManager.showLoading()
+                        _checkoutState.value = UiState.Loading
+                    }
                     is Resource.Success -> {
+                        notificationManager.hideLoading()
+                        notificationManager.showSuccess("Đặt hàng thành công!")
                         _checkoutState.value = UiState.Success(resource.data!!)
                         cartRepository.clearCart()
                     }
                     is Resource.Error -> {
-                        _checkoutState.value = UiState.Error(resource.message ?: "Order failed")
+                        notificationManager.hideLoading()
+                        val errorMsg = resource.message ?: "Đặt hàng thất bại"
+                        notificationManager.showError(errorMsg)
+                        _checkoutState.value = UiState.Error(errorMsg)
                     }
-                    else -> {}
                 }
             }
         }

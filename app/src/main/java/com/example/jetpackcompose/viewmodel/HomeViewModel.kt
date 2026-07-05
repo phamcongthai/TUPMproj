@@ -15,6 +15,7 @@ import com.example.jetpackcompose.data.repository.FoodRepository
 import com.example.jetpackcompose.data.repository.LocationRepository
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
+import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -25,7 +26,8 @@ class HomeViewModel @Inject constructor(
     private val authPreference: AuthPreference,
     private val foodRepository: FoodRepository,
     private val cartRepository: CartRepository,
-    private val locationRepository: LocationRepository
+    private val locationRepository: LocationRepository,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     val user = authPreference.userData.stateIn(
@@ -35,6 +37,12 @@ class HomeViewModel @Inject constructor(
     )
 
     val locationState = locationRepository.getLocationState()
+
+    val shouldShowLocationPopup = locationRepository.shouldShowPermissionPopup().stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        false
+    )
 
     private val _promotionsState = MutableStateFlow<UiState<List<Promotion>>>(UiState.Loading)
     val promotionsState = _promotionsState.asStateFlow()
@@ -46,9 +54,6 @@ class HomeViewModel @Inject constructor(
 
     private val _selectedCategory = MutableStateFlow("All")
     val selectedCategory = _selectedCategory.asStateFlow()
-
-    private val _toastMessage = MutableSharedFlow<String>()
-    val toastMessage = _toastMessage.asSharedFlow()
 
     val filteredMenuItems: StateFlow<UiState<List<MenuItem>>> = combine(
         _allMenuItems, 
@@ -90,7 +95,16 @@ class HomeViewModel @Inject constructor(
     }
 
     fun onLocationPermissionDenied() {
+        viewModelScope.launch {
+            locationRepository.markPopupShown()
+        }
         locationRepository.onPermissionDenied()
+    }
+
+    fun markLocationPopupShown() {
+        viewModelScope.launch {
+            locationRepository.markPopupShown()
+        }
     }
 
     fun refreshLocation() {
@@ -134,7 +148,7 @@ class HomeViewModel @Inject constructor(
     fun addToCart(item: MenuItem, quantity: Int, variant: Variant?, toppings: List<Topping>) {
         if (item.status == "out_of_stock") {
             viewModelScope.launch {
-                _toastMessage.emit("Món ăn hiện đã hết hàng.")
+                notificationManager.showWarning("Món ăn hiện đã hết hàng.")
             }
             return
         }
@@ -152,6 +166,7 @@ class HomeViewModel @Inject constructor(
                     toppings = toppings
                 )
             )
+            notificationManager.showSuccess("Đã thêm ${item.name} vào giỏ hàng")
         }
     }
 

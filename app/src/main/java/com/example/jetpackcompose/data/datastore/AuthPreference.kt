@@ -31,6 +31,7 @@ class AuthPreference @Inject constructor(private val context: Context) {
         val ADDRESS = stringPreferencesKey("address")
         val LATITUDE = stringPreferencesKey("latitude")
         val LONGITUDE = stringPreferencesKey("longitude")
+        val LOCATION_POPUP_SHOWN = stringPreferencesKey("location_popup_shown")
     }
 
     private val gson = Gson()
@@ -46,6 +47,14 @@ class AuthPreference @Inject constructor(private val context: Context) {
     fun getAddress(): Flow<String?> = context.dataStore.data.map { it[ADDRESS] }
     fun getLat(): Flow<Double?> = context.dataStore.data.map { it[LATITUDE]?.toDoubleOrNull() }
     fun getLng(): Flow<Double?> = context.dataStore.data.map { it[LONGITUDE]?.toDoubleOrNull() }
+
+    suspend fun setLocationPopupShown(shown: Boolean) {
+        context.dataStore.edit { it[LOCATION_POPUP_SHOWN] = shown.toString() }
+    }
+
+    fun isLocationPopupShown(): Flow<Boolean> = context.dataStore.data.map { 
+        it[LOCATION_POPUP_SHOWN]?.toBoolean() ?: false 
+    }
 
     suspend fun saveTokens(accessToken: String, refreshToken: String) {
         context.dataStore.edit { prefs ->

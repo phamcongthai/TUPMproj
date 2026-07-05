@@ -63,13 +63,13 @@ object OrderUtils {
             for (step in steps) {
                 val trackingItem = order.tracking?.find { it.status == step.first }
                 if (trackingItem != null) {
-                    result.add(TimelineStep(step.second, step.first, true, false, formatTimeOnly(trackingItem.updatedAt)))
+                    result.add(TimelineStep(step.second, step.first, true, false, formatTimeOnly(trackingItem.timestamp ?: trackingItem.updatedAt)))
                 }
             }
             
             // Add cancelled step
             val cancelledItem = order.tracking?.find { it.status == "cancelled" }
-            result.add(TimelineStep("Đơn hàng đã bị huỷ", "cancelled", true, true, formatTimeOnly(cancelledItem?.updatedAt)))
+            result.add(TimelineStep("Đơn hàng đã bị huỷ", "cancelled", true, true, formatTimeOnly(cancelledItem?.timestamp ?: cancelledItem?.updatedAt)))
             
             return result
         }
@@ -85,12 +85,17 @@ object OrderUtils {
             
             val isCurrent = step.first == currentStatus || (step.first == "pending" && currentStatus == "confirmed")
             
+            val displayTimestamp = if (isStepCompleted) {
+                val item = trackingItem ?: order.tracking?.find { it.status == "confirmed" && step.first == "pending" }
+                formatTimeOnly(item?.timestamp ?: item?.updatedAt)
+            } else "--:--"
+
             TimelineStep(
                 title = step.second,
                 status = step.first,
                 isCompleted = isStepCompleted,
                 isCurrent = isCurrent,
-                timestamp = if (isStepCompleted) formatTimeOnly(trackingItem?.updatedAt ?: order.tracking?.find { it.status == "confirmed" && step.first == "pending" }?.updatedAt) else "--:--"
+                timestamp = displayTimestamp
             )
         }
     }

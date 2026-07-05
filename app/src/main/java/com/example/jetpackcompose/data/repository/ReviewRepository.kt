@@ -1,6 +1,6 @@
 package com.example.jetpackcompose.data.repository
 
-import com.example.jetpackcompose.data.remote.api.ReviewApi
+import com.example.jetpackcompose.data.remote.api.ApiService
 import com.example.jetpackcompose.data.remote.dto.*
 import com.example.jetpackcompose.utils.Resource
 import kotlinx.coroutines.flow.Flow
@@ -15,26 +15,26 @@ interface ReviewRepository {
 }
 
 class ReviewRepositoryImpl @Inject constructor(
-    private val reviewApi: ReviewApi
+    private val apiService: ApiService
 ) : BaseRepository(), ReviewRepository {
 
     override fun createReview(request: CreateReviewRequest) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { reviewApi.createReview(request) })
+        emit(safeApiCall { apiService.createReview(request) })
     }
 
     override fun updateReview(id: String, request: UpdateReviewRequest) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { reviewApi.updateReview(id, request) })
+        emit(safeApiCall { apiService.updateReview(id, request) })
     }
 
     override fun deleteReview(id: String) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { reviewApi.deleteReview(id) })
+        emit(safeApiCall { apiService.deleteReview(id) })
     }
 
     override fun getReviewList(menuItemId: String) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { reviewApi.getReviewList(ReviewListRequest(menuItemId)) })
+        emit(safeApiCall { apiService.getReviewList(ReviewListRequest(menuItemId)) })
     }
 }

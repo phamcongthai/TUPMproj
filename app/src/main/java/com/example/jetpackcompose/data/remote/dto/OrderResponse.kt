@@ -22,5 +22,6 @@ data class OrderResponse(
 
 data class TrackingDto(
     val status: String? = null,
-    val updatedAt: String? = null
+    val updatedAt: String? = null,
+    val timestamp: String? = null
 )

@@ -1,7 +1,6 @@
 package com.example.jetpackcompose.presentation.screen.checkout
 
 import android.app.TimePickerDialog
-import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -49,26 +48,14 @@ fun CheckoutScreen(
     val totalPayment by viewModel.totalPayment.collectAsState()
     val checkoutState by viewModel.checkoutState.collectAsState()
 
-    val context = LocalContext.current
-    var showSuccessDialog by remember { mutableStateOf(false) }
-    val snackbarHostState = remember { SnackbarHostState() }
-
-    LaunchedEffect(Unit) {
-        viewModel.toastMessage.collect { message ->
-            snackbarHostState.showSnackbar(message)
-        }
-    }
-
     LaunchedEffect(checkoutState) {
         if (checkoutState is UiState.Success) {
-            showSuccessDialog = true
-        } else if (checkoutState is UiState.Error) {
-            Toast.makeText(context, (checkoutState as UiState.Error).message, Toast.LENGTH_LONG).show()
+            viewModel.resetState()
+            onNavigateHome()
         }
     }
 
     Scaffold(
-        snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = {
             CenterAlignedTopAppBar(
                 title = { Text("Thanh toán", fontWeight = FontWeight.Bold) },
@@ -202,28 +189,6 @@ fun CheckoutScreen(
             
             Spacer(modifier = Modifier.height(32.dp))
         }
-    }
-
-    if (showSuccessDialog) {
-        AlertDialog(
-            onDismissRequest = { },
-            confirmButton = {
-                Button(
-                    onClick = {
-                        showSuccessDialog = false
-                        viewModel.resetState()
-                        onNavigateHome()
-                    },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF9800))
-                ) {
-                    Text("Về trang chủ")
-                }
-            },
-            title = { Text("Đặt món thành công!") },
-            text = { Text("Đơn hàng của bạn đã được gửi đến quán. Vui lòng theo dõi trạng thái đơn hàng.") },
-            icon = { Icon(Icons.Default.CheckCircle, null, tint = Color(0xFF4CAF50), modifier = Modifier.size(48.dp)) },
-            shape = RoundedCornerShape(24.dp)
-        )
     }
 }
 

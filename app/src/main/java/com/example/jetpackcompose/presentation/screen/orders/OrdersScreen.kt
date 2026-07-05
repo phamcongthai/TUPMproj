@@ -52,16 +52,10 @@ fun OrdersScreen(viewModel: OrdersViewModel) {
     val cancelled by viewModel.cancelledOrders.collectAsState()
 
     var selectedOrderForTracking by remember { mutableStateOf<OrderResponse?>(null) }
-    
+
     val isRefreshing = (uncompleted is UiState.Loading && selectedTabIndex == 0) ||
                       (completed is UiState.Loading && selectedTabIndex == 1) ||
                       (cancelled is UiState.Loading && selectedTabIndex == 2)
-
-    LaunchedEffect(Unit) {
-        viewModel.toastMessage.collect { message ->
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-        }
-    }
 
     Scaffold(
         topBar = {
