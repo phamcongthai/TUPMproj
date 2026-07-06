@@ -4,13 +4,14 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.IntentSender
-import android.location.Geocoder
 import android.location.Location
 import android.os.Looper
 import android.util.Log
 import com.example.jetpackcompose.data.datastore.AuthPreference
 import com.example.jetpackcompose.data.model.LocationData
 import com.example.jetpackcompose.data.model.LocationUiState
+import com.example.jetpackcompose.data.remote.api.GeocodingApiService
+import com.example.jetpackcompose.utils.Resource
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.Task
@@ -21,7 +22,6 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
-import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -31,6 +31,8 @@ interface LocationRepository {
     suspend fun markPopupShown()
     suspend fun startLocationUpdate()
     suspend fun refreshLocation()
+    suspend fun geocodeAddress(address: String): Resource<LocationData>
+    suspend fun updateAddressManually(newAddress: String)
     fun clearCache()
     fun checkGpsSettings(activity: Activity, onGpsEnabled: () -> Unit)
     fun onPermissionDenied()
@@ -39,7 +41,8 @@ interface LocationRepository {
 @Singleton
 class LocationRepositoryImpl @Inject constructor(
     @ApplicationContext private val context: Context,
-    private val authPreference: AuthPreference
+    private val authPreference: AuthPreference,
+    private val geocodingApiService: GeocodingApiService
 ) : LocationRepository {
 
     private val TAG = "LocationRepository"
@@ -75,6 +78,83 @@ class LocationRepositoryImpl @Inject constructor(
     override suspend fun refreshLocation() {
         clearCache()
         fetchFreshLocation()
+    }
+
+    override suspend fun geocodeAddress(address: String): Resource<LocationData> {
+        return withContext(Dispatchers.IO) {
+            val query = if (address.lowercase().contains("vietnam") || address.lowercase().contains("việt nam")) {
+                address
+            } else {
+                "$address, Vietnam"
+            }
+            
+            var retryCount = 0
+            val maxRetries = 1
+            
+            while (retryCount <= maxRetries) {
+                try {
+                    // Nominatim limit is 1 req/sec.
+                    if (retryCount > 0) kotlinx.coroutines.delay(2000) else kotlinx.coroutines.delay(1000)
+                    
+                    Log.d(TAG, "Geocoding attempt ${retryCount + 1}: $query")
+                    val response = geocodingApiService.searchAddress(query)
+                    
+                    if (response.isSuccessful) {
+                        val body = response.body()
+                        if (!body.isNullOrEmpty()) {
+                            val result = body[0]
+                            val lat = result.lat?.toDoubleOrNull() ?: 0.0
+                            val lon = result.lon?.toDoubleOrNull() ?: 0.0
+                            val displayName = result.displayName ?: address
+                            
+                            Log.d(TAG, "Found coordinates: $lat, $lon for $displayName")
+                            return@withContext Resource.Success(LocationData(displayName, lat, lon))
+                        } else {
+                            // If first attempt with ", Vietnam" failed, try original
+                            if (retryCount == 0 && query != address) {
+                                // Continue loop but query address directly
+                                retryCount++
+                                continue 
+                            }
+                            return@withContext Resource.Error("Không tìm thấy địa chỉ giao hàng.")
+                        }
+                    } else {
+                        Log.e(TAG, "Geocoding API error: ${response.code()}")
+                        if (response.code() == 403) {
+                            return@withContext Resource.Error("Dịch vụ bản đồ đang bận (403). Thử nhập địa chỉ chi tiết hơn.")
+                        }
+                        // For other errors, maybe retry
+                        retryCount++
+                    }
+                } catch (e: Exception) {
+                    Log.e(TAG, "Geocoding exception: ${e.message}")
+                    if (retryCount >= maxRetries) {
+                        return@withContext Resource.Error("Lỗi kết nối mạng. Vui lòng kiểm tra lại.")
+                    }
+                    retryCount++
+                }
+            }
+            Resource.Error("Không thể xác định vị trí sau nhiều lần thử.")
+        }
+    }
+
+    override suspend fun updateAddressManually(newAddress: String) {
+        if (newAddress.isBlank()) return
+        Log.d(TAG, "Updating address manually: $newAddress")
+        
+        val result = geocodeAddress(newAddress)
+        if (result is Resource.Success) {
+            val data = result.data!!
+            Log.d(TAG, "Manual geocoding success: ${data.latitude}, ${data.longitude}")
+            authPreference.saveLocation(newAddress, data.latitude, data.longitude)
+            _locationState.value = LocationUiState.Success(
+                LocationData(newAddress, data.latitude, data.longitude)
+            )
+        } else {
+            Log.w(TAG, "Manual geocoding failed: ${result.message}")
+            authPreference.saveLocation(newAddress, 0.0, 0.0)
+            _locationState.value = LocationUiState.Error(result.message ?: "Lỗi xác định vị trí")
+        }
     }
 
     override fun clearCache() {
@@ -178,47 +258,26 @@ class LocationRepositoryImpl @Inject constructor(
         
         withContext(Dispatchers.IO) {
             try {
-                val geocoder = Geocoder(context, Locale.getDefault())
-                @Suppress("DEPRECATION")
-                val addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1)
-                
-                if (!addresses.isNullOrEmpty()) {
-                    val addr = addresses[0]
-                    val fullAddress = buildString {
-                        val feature = addr.featureName
-                        val thoroughfare = addr.thoroughfare
-                        val subAdmin = addr.subAdminArea
-                        val admin = addr.adminArea
-                        
-                        if (feature != null) append(feature)
-                        if (thoroughfare != null && thoroughfare != feature) {
-                            if (isNotEmpty()) append(", ")
-                            append(thoroughfare)
-                        }
-                        if (subAdmin != null) {
-                            if (isNotEmpty()) append(", ")
-                            append(subAdmin)
-                        }
-                        if (admin != null) {
-                            if (isNotEmpty()) append(", ")
-                            append(admin)
-                        }
+                val response = geocodingApiService.reverseGeocode(location.latitude, location.longitude)
+                if (response.isSuccessful) {
+                    val result = response.body()
+                    if (result != null) {
+                        val fullAddress = result.displayName ?: "${location.latitude}, ${location.longitude}"
+                        Log.d(TAG, "Reverse geocoding success: $fullAddress")
+                        val locationData = LocationData(fullAddress, location.latitude, location.longitude)
+                        authPreference.saveLocation(fullAddress, location.latitude, location.longitude)
+                        _locationState.value = LocationUiState.Success(locationData)
+                    } else {
+                        Log.w(TAG, "No reverse geocode result")
+                        _locationState.value = LocationUiState.Error("Không tìm thấy địa chỉ cho tọa độ này.")
                     }
-                    
-                    Log.d(TAG, "Geocoding success: $fullAddress")
-                    val locationData = LocationData(fullAddress, location.latitude, location.longitude)
-                    authPreference.saveLocation(fullAddress, location.latitude, location.longitude)
-                    _locationState.value = LocationUiState.Success(locationData)
                 } else {
-                    Log.w(TAG, "No address found")
-                    _locationState.value = LocationUiState.Error(
-                        "Không tìm thấy địa chỉ cho tọa độ này.",
-                        LocationUiState.ErrorType.GEOCODER_FAILED
-                    )
+                    Log.e(TAG, "Reverse geocode API error: ${response.code()}")
+                    _locationState.value = LocationUiState.Error("Lỗi máy chủ địa chỉ")
                 }
             } catch (e: Exception) {
-                Log.e(TAG, "Geocoder error: ${e.message}")
-                _locationState.value = LocationUiState.Error("Lỗi chuyển đổi địa chỉ: ${e.message}")
+                Log.e(TAG, "Reverse geocoding error: ${e.message}")
+                _locationState.value = LocationUiState.Error("Không thể xác định địa chỉ. Kiểm tra internet.")
             }
         }
     }

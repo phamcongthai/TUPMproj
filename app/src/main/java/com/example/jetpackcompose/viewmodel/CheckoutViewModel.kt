@@ -1,7 +1,5 @@
 package com.example.jetpackcompose.viewmodel
 
-import android.content.Context
-import android.location.Geocoder
 import android.location.Location
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -10,19 +8,16 @@ import com.example.jetpackcompose.data.datastore.AuthPreference
 import com.example.jetpackcompose.data.remote.dto.*
 import com.example.jetpackcompose.data.repository.CartRepository
 import com.example.jetpackcompose.data.repository.FoodRepository
+import com.example.jetpackcompose.data.repository.LocationRepository
 import com.example.jetpackcompose.utils.Constants
 import com.example.jetpackcompose.utils.Resource
 import com.example.jetpackcompose.utils.UiState
 import com.example.jetpackcompose.utils.notification.NotificationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import java.util.*
 import javax.inject.Inject
 
 @OptIn(FlowPreview::class)
@@ -31,8 +26,8 @@ class CheckoutViewModel @Inject constructor(
     private val cartRepository: CartRepository,
     private val foodRepository: FoodRepository,
     private val authPreference: AuthPreference,
-    private val notificationManager: NotificationManager,
-    @ApplicationContext private val context: Context
+    private val locationRepository: LocationRepository,
+    private val notificationManager: NotificationManager
 ) : ViewModel() {
 
     private val TAG = "CheckoutViewModel"
@@ -62,11 +57,14 @@ class CheckoutViewModel @Inject constructor(
     private val _shipFee = MutableStateFlow(0L)
     val shipFee = _shipFee.asStateFlow()
 
+    private val _isAddressValid = MutableStateFlow(true)
+    val isAddressValid = _isAddressValid.asStateFlow()
+
+    private val _geocodingLoading = MutableStateFlow(false)
+    val geocodingLoading = _geocodingLoading.asStateFlow()
+
     private val _checkoutState = MutableStateFlow<UiState<Any>>(UiState.Idle)
     val checkoutState = _checkoutState.asStateFlow()
-
-    private val _toastMessage = MutableSharedFlow<String>()
-    val toastMessage = _toastMessage.asSharedFlow()
 
     val totalItemPrice = cartItems.map { items ->
         items.sumOf { it.getTotalPrice() }
@@ -84,36 +82,87 @@ class CheckoutViewModel @Inject constructor(
             authPreference.getAddress().first()?.let { savedAddress ->
                 if (savedAddress.isNotBlank()) {
                     _address.value = savedAddress
-                    if (_method.value == DeliveryMethod.SHIP) {
-                        calculateDistance(savedAddress)
+                    // We don't necessarily know lat/lng here unless we also load them
+                    val lat = authPreference.getLat().first()
+                    val lng = authPreference.getLng().first()
+                    if (lat != null && lng != null && lat != 0.0 && lng != 0.0) {
+                        calculateDistance(lat, lng)
+                    } else if (_method.value == DeliveryMethod.SHIP) {
+                        startGeocoding(savedAddress)
                     }
                 }
             }
         }
 
-        // Use debounce to avoid triggering Geocoder on every keystroke
+        // Debounce address input
         viewModelScope.launch {
             _address
-                .debounce(800) // Adjust as needed
+                .debounce(1000)
                 .distinctUntilChanged()
                 .collect { addr ->
                     if (addr.isNotBlank() && _method.value == DeliveryMethod.SHIP) {
-                        calculateDistance(addr)
+                        startGeocoding(addr)
                     } else {
-                        _distanceKm.value = 0.0
-                        _shipFee.value = 0
+                        resetDistance()
                     }
                 }
         }
     }
 
+    private fun startGeocoding(addr: String) {
+        geocodeJob?.cancel()
+        geocodeJob = viewModelScope.launch {
+            _geocodingLoading.value = true
+            _isAddressValid.value = false // Invalid until proven otherwise
+            
+            val result = locationRepository.geocodeAddress(addr)
+            
+            _geocodingLoading.value = false
+            when (result) {
+                is Resource.Success -> {
+                    val location = result.data!!
+                    calculateDistance(location.latitude, location.longitude)
+                    _isAddressValid.value = true
+                    // Save valid coordinates to DataStore
+                    authPreference.saveLocation(addr, location.latitude, location.longitude)
+                }
+                is Resource.Error -> {
+                    resetDistance()
+                    _isAddressValid.value = false
+                    notificationManager.showError(result.message ?: "Không tìm thấy địa chỉ.")
+                }
+                else -> {}
+            }
+        }
+    }
+
+    private fun resetDistance() {
+        _distanceKm.value = 0.0
+        _shipFee.value = 0
+    }
+
+    private fun calculateDistance(destLat: Double, destLng: Double) {
+        val results = FloatArray(1)
+        Location.distanceBetween(
+            Constants.STORE_LAT, Constants.STORE_LNG,
+            destLat, destLng,
+            results
+        )
+
+        val distKm = results[0] / 1000.0
+        val roundedDist = Math.round(distKm * 10) / 10.0
+        _distanceKm.value = roundedDist
+        _shipFee.value = (roundedDist * 2000).toLong() // 2000đ/km
+        Log.d(TAG, "Distance calculated: $roundedDist km, Fee: ${_shipFee.value}")
+    }
+
     fun setMethod(m: DeliveryMethod) { 
         _method.value = m 
         if (m == DeliveryMethod.PICKUP) {
-            _distanceKm.value = 0.0
-            _shipFee.value = 0
+            resetDistance()
+            _isAddressValid.value = true // Not needed for pickup
         } else if (_address.value.isNotBlank()) {
-            calculateDistance(_address.value)
+            startGeocoding(_address.value)
         }
     }
     
@@ -121,73 +170,10 @@ class CheckoutViewModel @Inject constructor(
     
     fun setAddress(a: String) {
         _address.value = a
-        viewModelScope.launch {
-            // We save just the string here. The lat/lng will be updated via geocoding if it's a ship order.
-            authPreference.saveLocation(a, 0.0, 0.0)
-        }
     }
     
     fun setPickupTime(t: String) { _pickupTime.value = t }
     fun setNote(n: String) { _note.value = n }
-
-    private fun calculateDistance(addressStr: String) {
-        geocodeJob?.cancel() // Cancel previous calculation if still running
-        geocodeJob = viewModelScope.launch {
-            Log.d(TAG, "Starting distance calculation for: $addressStr")
-
-            try {
-                val distResult = withContext(Dispatchers.IO) {
-                    if (!Geocoder.isPresent()) {
-                        Log.e(TAG, "Geocoder is not present on this device")
-                        return@withContext null
-                    }
-                    val geocoder = Geocoder(context, Locale.getDefault())
-                    @Suppress("DEPRECATION")
-                    val addresses = try {
-                        geocoder.getFromLocationName(addressStr, 1)
-                    } catch (e: Exception) {
-                        Log.e(TAG, "Geocoder error: ${e.message}")
-                        null
-                    }
-
-                    if (addresses != null && addresses.isNotEmpty()) {
-                        val location = addresses[0]
-                        val destLat = location.latitude
-                        val destLng = location.longitude
-                        Log.d(TAG, "Found location: $destLat, $destLng")
-
-                        val results = FloatArray(1)
-                        Location.distanceBetween(
-                            Constants.STORE_LAT, Constants.STORE_LNG,
-                            destLat, destLng,
-                            results
-                        )
-
-                        val distKm = results[0] / 1000.0
-                        val roundedDist = Math.round(distKm * 10) / 10.0
-                        Log.d(TAG, "Calculated distance: $roundedDist km")
-                        roundedDist
-                    } else {
-                        Log.w(TAG, "No address found for: $addressStr")
-                        null
-                    }
-                }
-
-                if (distResult != null) {
-                    _distanceKm.value = distResult
-                    _shipFee.value = (distResult * 2000).toLong() // 2000đ/km
-                    Log.d(TAG, "Updated ship fee: ${_shipFee.value}")
-                } else {
-                    _distanceKm.value = 0.0
-                    _shipFee.value = 0
-                }
-            } catch (e: Exception) {
-                Log.e(TAG, "Error in calculateDistance: ${e.message}")
-                _distanceKm.value = 0.0
-                _shipFee.value = 0
-            }
-        }
-    }
 
     fun placeOrder() {
         if (cartItems.value.isEmpty()) return
@@ -200,10 +186,17 @@ class CheckoutViewModel @Inject constructor(
             return
         }
 
-        if (_method.value == DeliveryMethod.SHIP && _address.value.isEmpty()) {
-            viewModelScope.launch { notificationManager.showError("Vui lòng nhập địa chỉ giao hàng") }
-            return
+        if (_method.value == DeliveryMethod.SHIP) {
+            if (_address.value.isEmpty()) {
+                viewModelScope.launch { notificationManager.showError("Vui lòng nhập địa chỉ giao hàng") }
+                return
+            }
+            if (!_isAddressValid.value) {
+                viewModelScope.launch { notificationManager.showError("Địa chỉ giao hàng không hợp lệ") }
+                return
+            }
         }
+
         if (_method.value == DeliveryMethod.PICKUP && _pickupTime.value.isEmpty()) {
             viewModelScope.launch { notificationManager.showError("Vui lòng chọn thời gian đến lấy") }
             return

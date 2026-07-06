@@ -1,6 +1,7 @@
 package com.example.jetpackcompose.di
 
 import com.example.jetpackcompose.data.remote.api.ApiService
+import com.example.jetpackcompose.data.remote.api.GeocodingApiService
 import com.example.jetpackcompose.data.remote.interceptor.AuthInterceptor
 import com.example.jetpackcompose.data.remote.interceptor.TokenAuthenticator
 import dagger.Module
@@ -60,5 +61,29 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGeocodingApiService(): GeocodingApiService {
+        val client = OkHttpClient.Builder()
+            .addInterceptor { chain ->
+                val request = chain.request().newBuilder()
+                    .header("User-Agent", "JetpackCompose_Restaurant_App_v1_${System.currentTimeMillis()}")
+                    .header("Accept-Language", "vi,en;q=0.9")
+                    .build()
+                chain.proceed(request)
+            }
+            .addInterceptor(HttpLoggingInterceptor().apply {
+                level = HttpLoggingInterceptor.Level.BODY
+            })
+            .build()
+
+        return Retrofit.Builder()
+            .baseUrl("https://nominatim.openstreetmap.org/")
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(GeocodingApiService::class.java)
     }
 }

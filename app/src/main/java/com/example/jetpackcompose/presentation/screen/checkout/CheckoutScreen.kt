@@ -47,6 +47,8 @@ fun CheckoutScreen(
     val totalItemPrice by viewModel.totalItemPrice.collectAsState()
     val totalPayment by viewModel.totalPayment.collectAsState()
     val checkoutState by viewModel.checkoutState.collectAsState()
+    val isAddressValid by viewModel.isAddressValid.collectAsState()
+    val geocodingLoading by viewModel.geocodingLoading.collectAsState()
 
     LaunchedEffect(checkoutState) {
         if (checkoutState is UiState.Success) {
@@ -100,7 +102,7 @@ fun CheckoutScreen(
                 if (method == DeliveryMethod.PICKUP) {
                     PickupSection(pickupTime) { viewModel.setPickupTime(it) }
                 } else {
-                    ShipSection(address, distanceKm, shipFee) { viewModel.setAddress(it) }
+                    ShipSection(address, distanceKm, shipFee, geocodingLoading, isAddressValid) { viewModel.setAddress(it) }
                 }
 
                 Spacer(modifier = Modifier.height(12.dp))
@@ -164,22 +166,31 @@ fun CheckoutScreen(
                     .fillMaxWidth()
                     .height(56.dp),
                 shape = RoundedCornerShape(14.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Transparent,
+                    disabledContainerColor = Color.Gray.copy(alpha = 0.5f)
+                ),
                 contentPadding = PaddingValues(),
-                enabled = checkoutState !is UiState.Loading
+                enabled = checkoutState !is UiState.Loading && isAddressValid && !geocodingLoading
             ) {
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
                         .background(
-                            brush = Brush.horizontalGradient(
-                                colors = listOf(Color(0xFFFF9800), Color(0xFFFF5722))
-                            ),
+                            brush = if (checkoutState !is UiState.Loading && isAddressValid && !geocodingLoading) {
+                                Brush.horizontalGradient(
+                                    colors = listOf(Color(0xFFFF9800), Color(0xFFFF5722))
+                                )
+                            } else {
+                                Brush.horizontalGradient(
+                                    colors = listOf(Color.Gray, Color.Gray)
+                                )
+                            },
                             shape = RoundedCornerShape(14.dp)
                         ),
                     contentAlignment = Alignment.Center
                 ) {
-                    if (checkoutState is UiState.Loading) {
+                    if (checkoutState is UiState.Loading || geocodingLoading) {
                         CircularProgressIndicator(color = Color.White, modifier = Modifier.size(24.dp))
                     } else {
                         Text("XÁC NHẬN ĐẶT MÓN", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
@@ -244,7 +255,14 @@ fun PickupSection(pickupTime: String, onTimeSelected: (String) -> Unit) {
 }
 
 @Composable
-fun ShipSection(address: String, distance: Double, shipFee: Long, onAddressChange: (String) -> Unit) {
+fun ShipSection(
+    address: String,
+    distance: Double,
+    shipFee: Long,
+    isLoading: Boolean,
+    isValid: Boolean,
+    onAddressChange: (String) -> Unit
+) {
     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         OutlinedTextField(
             value = address,
@@ -252,7 +270,24 @@ fun ShipSection(address: String, distance: Double, shipFee: Long, onAddressChang
             label = { Text("Địa chỉ giao hàng") },
             modifier = Modifier.fillMaxWidth(),
             leadingIcon = { Icon(Icons.Default.LocationOn, null, tint = Color(0xFFFF9800)) },
+            trailingIcon = {
+                if (isLoading) {
+                    CircularProgressIndicator(modifier = Modifier.size(20.dp), strokeWidth = 2.dp)
+                } else if (address.isNotBlank()) {
+                    Icon(
+                        imageVector = if (isValid) Icons.Default.CheckCircle else Icons.Default.Error,
+                        contentDescription = null,
+                        tint = if (isValid) Color(0xFF4CAF50) else Color.Red
+                    )
+                }
+            },
             shape = RoundedCornerShape(12.dp),
+            isError = !isValid && address.isNotBlank() && !isLoading,
+            supportingText = {
+                if (!isValid && address.isNotBlank() && !isLoading) {
+                    Text("Không tìm thấy địa chỉ giao hàng.", color = Color.Red)
+                }
+            },
             keyboardOptions = KeyboardOptions(
                 capitalization = KeyboardCapitalization.Sentences,
                 keyboardType = KeyboardType.Text,
