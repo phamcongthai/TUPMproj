@@ -1,0 +1,111 @@
+{
+  "result": "PASS",
+  "starts": 27,
+  "blocks": [
+    {
+      "block": "D1",
+      "starts": 3,
+      "test": "coldStartupNoCompilation",
+      "reportSha256": "95afa51050b9393d0447c4721c547bb69101a2992524682d6836f0151741cc32"
+    },
+    {
+      "block": "E1",
+      "starts": 3,
+      "test": "coldStartupWithBaselineProfile",
+      "reportSha256": "57b2c5bac9225cb1bb5cb5d0be93db2c148940d5eb3d94c42db8f2aac01a655c"
+    },
+    {
+      "block": "F1",
+      "starts": 3,
+      "test": "coldStartupWithBaselineProfile",
+      "reportSha256": "56e72976c66ee6f996f73dcc2ac161d89f049320b319bd81df08e42fc8591185"
+    },
+    {
+      "block": "F2",
+      "starts": 3,
+      "test": "coldStartupWithBaselineProfile",
+      "reportSha256": "50c697f2761275dcd0d7c49b0dc53fb93534a9624807d36837264417593c14b3"
+    },
+    {
+      "block": "D2",
+      "starts": 3,
+      "test": "coldStartupNoCompilation",
+      "reportSha256": "85a5586970ac4a6c7e101223d13ecceab03531e9ed2861bd0dd32ea4ec2edd97"
+    },
+    {
+      "block": "E2",
+      "starts": 3,
+      "test": "coldStartupWithBaselineProfile",
+      "reportSha256": "31cee5d2e3f5c36f842b9a36ae23c2e20e6a45ff590294a2c889be576d7ebab6"
+    },
+    {
+      "block": "E3",
+      "starts": 3,
+      "test": "coldStartupWithBaselineProfile",
+      "reportSha256": "c4ec00e9f95f52142437c0e4f688d565009e28c041d46589e8a1627174ab3605"
+    },
+    {
+      "block": "F3",
+      "starts": 3,
+      "test": "coldStartupWithBaselineProfile",
+      "reportSha256": "0b40fc979ea5ba57b2b0fa72522da37d1c6047b21e28909bbb75d1532268f034"
+    },
+    {
+      "block": "D3",
+      "starts": 3,
+      "test": "coldStartupNoCompilation",
+      "reportSha256": "c06b1e7a6cce84a0be3816355396544866689b7dafc4ca6d1a69880d3ffc93d4"
+    }
+  ],
+  "statistics": [
+    {
+      "configuration": "D",
+      "metric": "timeToInitialDisplayMs",
+      "n": 9,
+      "medianMs": 1068.374692,
+      "minimumMs": 568.754154,
+      "maximumMs": 1726.418769
+    },
+    {
+      "configuration": "D",
+      "metric": "timeToFullDisplayMs",
+      "n": 9,
+      "medianMs": 1380.999077,
+      "minimumMs": 771.434154,
+      "maximumMs": 1954.884308
+    },
+    {
+      "configuration": "E",
+      "metric": "timeToInitialDisplayMs",
+      "n": 9,
+      "medianMs": 930.031923,
+      "minimumMs": 658.714538,
+      "maximumMs": 1452.63023
+    },
+    {
+      "configuration": "E",
+      "metric": "timeToFullDisplayMs",
+      "n": 9,
+      "medianMs": 1065.297461,
+      "minimumMs": 786.757846,
+      "maximumMs": 1634.214769
+    },
+    {
+      "configuration": "F",
+      "metric": "timeToInitialDisplayMs",
+      "n": 9,
+      "medianMs": 1040.692846,
+      "minimumMs": 810.110539,
+      "maximumMs": 1275.437846
+    },
+    {
+      "configuration": "F",
+      "metric": "timeToFullDisplayMs",
+      "n": 9,
+      "medianMs": 1179.933154,
+      "minimumMs": 950.743462,
+      "maximumMs": 1443.411462
+    }
+  ],
+  "scope": "Checks data integrity and preparation evidence; does not establish statistical significance."
+}

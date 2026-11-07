@@ -1,0 +1,78 @@
+{
+    "context": {
+        "build": {
+            "brand": "Redmi",
+            "device": "air",
+            "fingerprint": "Redmi/air_in/air:13/TP1A.220624.014/V14.0.8.0.TGQINXM:user/release-keys",
+            "id": "TP1A.220624.014",
+            "model": "23124RN87C",
+            "type": "user",
+            "version": {
+                "codename": "REL",
+                "sdk": 33
+            }
+        },
+        "cpuCoreCount": 8,
+        "cpuLocked": true,
+        "cpuMaxFreqHz": 2200000000,
+        "memTotalBytes": 3763265536,
+        "sustainedPerformanceModeEnabled": false,
+        "artMainlineVersion": 372042720,
+        "osCodenameAbbreviated": "T",
+        "compilationMode": "run-from-apk",
+        "payload": {}
+    },
+    "benchmarks": [
+        {
+            "name": "coldStartupNoCompilation",
+            "params": {},
+            "className": "com.example.foodapp.macrobenchmark.StartupBenchmark",
+            "totalRunTimeNs": 36449076387,
+            "metrics": {
+                "timeToFullDisplayMs": {
+                    "minimum": 1028.957308,
+                    "maximum": 2457.981539,
+                    "median": 1116.042385,
+                    "coefficientOfVariation": 0.5221132245642321,
+                    "runs": [
+                        2457.981539,
+                        1116.042385,
+                        1028.957308
+                    ]
+                },
+                "timeToInitialDisplayMs": {
+                    "minimum": 822.188308,
+                    "maximum": 1823.034846,
+                    "median": 928.734077,
+                    "coefficientOfVariation": 0.461395739089001,
+                    "runs": [
+                        1823.034846,
+                        928.734077,
+                        822.188308
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 3,
+            "thermalThrottleSleepSeconds": 0,
+            "profilerOutputs": [
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 0",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-02-48-17.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 1",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-02-48-28.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 2",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-02-48-37.perfetto-trace"
+                }
+            ]
+        }
+    ]
+}

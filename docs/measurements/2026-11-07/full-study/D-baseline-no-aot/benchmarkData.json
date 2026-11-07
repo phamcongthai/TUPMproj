@@ -1,0 +1,127 @@
+{
+    "context": {
+        "build": {
+            "brand": "google",
+            "device": "emu64xa",
+            "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:17/CE2A.260420.051.A2/16418371:user/release-keys",
+            "id": "CE2A.260420.051.A2",
+            "model": "sdk_gphone64_x86_64",
+            "type": "user",
+            "version": {
+                "codename": "REL",
+                "sdk": 37
+            }
+        },
+        "cpuCoreCount": 4,
+        "cpuLocked": false,
+        "cpuMaxFreqHz": 2000,
+        "memTotalBytes": 4102320128,
+        "sustainedPerformanceModeEnabled": false,
+        "artMainlineVersion": 370546200,
+        "osCodenameAbbreviated": "REL",
+        "compilationMode": "run-from-apk",
+        "payload": {}
+    },
+    "benchmarks": [
+        {
+            "name": "coldStartupNoCompilation",
+            "params": {},
+            "className": "com.example.foodapp.macrobenchmark.StartupBenchmark",
+            "totalRunTimeNs": 137563128420,
+            "metrics": {
+                "timeToFullDisplayMs": {
+                    "minimum": 957.286239,
+                    "maximum": 2284.682013,
+                    "median": 1045.9285095,
+                    "coefficientOfVariation": 0.34227966014606753,
+                    "runs": [
+                        2284.682013,
+                        993.275403,
+                        1055.372425,
+                        1007.181432,
+                        1276.548501,
+                        990.130822,
+                        957.286239,
+                        1055.486259,
+                        1041.07165,
+                        1050.785369
+                    ]
+                },
+                "timeToInitialDisplayMs": {
+                    "minimum": 710.813796,
+                    "maximum": 1625.968576,
+                    "median": 762.120318,
+                    "coefficientOfVariation": 0.32732173137672366,
+                    "runs": [
+                        1625.968576,
+                        728.060375,
+                        710.813796,
+                        734.519956,
+                        1276.548501,
+                        735.924915,
+                        957.286239,
+                        787.09783,
+                        737.142806,
+                        1050.785369
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 10,
+            "thermalThrottleSleepSeconds": 0,
+            "profilerOutputs": [
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 0",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-00-20-22.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 1",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-00-20-36.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 2",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-00-20-49.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 3",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter003_2026-11-07-00-21-02.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 4",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter004_2026-11-07-00-21-15.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 5",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter005_2026-11-07-00-21-29.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 6",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter006_2026-11-07-00-21-42.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 7",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter007_2026-11-07-00-21-55.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 8",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter008_2026-11-07-00-22-08.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 9",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter009_2026-11-07-00-22-21.perfetto-trace"
+                }
+            ]
+        }
+    ]
+}

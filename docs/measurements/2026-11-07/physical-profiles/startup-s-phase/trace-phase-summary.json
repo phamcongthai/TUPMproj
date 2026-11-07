@@ -1,0 +1,86 @@
+[
+  {
+    "configuration": "E",
+    "phase": "activity_resume",
+    "traces": 10,
+    "wall_ms_median": 35.394654,
+    "scheduled_cpu_ms_median": 14.9140005
+  },
+  {
+    "configuration": "E",
+    "phase": "activity_start",
+    "traces": 10,
+    "wall_ms_median": 55.6739615,
+    "scheduled_cpu_ms_median": 24.2327705
+  },
+  {
+    "configuration": "E",
+    "phase": "bind_application",
+    "traces": 10,
+    "wall_ms_median": 144.031384,
+    "scheduled_cpu_ms_median": 58.448842
+  },
+  {
+    "configuration": "E",
+    "phase": "fully_drawn",
+    "traces": 10,
+    "wall_ms_median": 0.15538449999999998,
+    "scheduled_cpu_ms_median": 0.15538449999999998
+  },
+  {
+    "configuration": "E",
+    "phase": "open_dex",
+    "traces": 10,
+    "wall_ms_median": 37.408500000000004,
+    "scheduled_cpu_ms_median": 10.5267275
+  },
+  {
+    "configuration": "E",
+    "phase": "render_wait",
+    "traces": 10,
+    "wall_ms_median": 0.41415349999999995,
+    "scheduled_cpu_ms_median": 0.0332695
+  },
+  {
+    "configuration": "F",
+    "phase": "activity_resume",
+    "traces": 10,
+    "wall_ms_median": 36.1924615,
+    "scheduled_cpu_ms_median": 17.8524985
+  },
+  {
+    "configuration": "F",
+    "phase": "activity_start",
+    "traces": 10,
+    "wall_ms_median": 65.237077,
+    "scheduled_cpu_ms_median": 25.5209585
+  },
+  {
+    "configuration": "F",
+    "phase": "bind_application",
+    "traces": 10,
+    "wall_ms_median": 147.223077,
+    "scheduled_cpu_ms_median": 58.020308
+  },
+  {
+    "configuration": "F",
+    "phase": "fully_drawn",
+    "traces": 10,
+    "wall_ms_median": 0.12692350000000002,
+    "scheduled_cpu_ms_median": 0.12692350000000002
+  },
+  {
+    "configuration": "F",
+    "phase": "open_dex",
+    "traces": 10,
+    "wall_ms_median": 54.4022305,
+    "scheduled_cpu_ms_median": 12.3616165
+  },
+  {
+    "configuration": "F",
+    "phase": "render_wait",
+    "traces": 10,
+    "wall_ms_median": 0.46249949999999995,
+    "scheduled_cpu_ms_median": 0.0323835
+  }
+]

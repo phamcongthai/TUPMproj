@@ -1,0 +1,14 @@
+﻿[
+    {
+        "path":  "D:\\TUPMDD\\food-app\\scripts\\Confirm-ProfileEffects.ps1",
+        "sha256":  "C1E8CC9E1DBF6619DCF0DDD2B6CD0BF16B03A8A35567D232FA3EC2BCADD8083C"
+    },
+    {
+        "path":  "D:\\TUPMDD\\food-app\\app\\build.gradle.kts",
+        "sha256":  "3F66B517E99915F3DEA21BC3C043684D04034CA226D979C05168BCE3BB100861"
+    },
+    {
+        "path":  "D:\\TUPMDD\\food-app\\macrobenchmark\\build\\outputs\\apk\\benchmark\\macrobenchmark-benchmark.apk",
+        "sha256":  "012AF6290FD13458CA76908B67EC53D9A90F73494FB7569A63D24428E0E2D27E"
+    }
+]

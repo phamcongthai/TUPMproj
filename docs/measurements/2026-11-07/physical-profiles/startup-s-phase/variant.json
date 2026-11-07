@@ -1,0 +1,8 @@
+﻿{
+    "variantApkSha256":  "9139DDE896BFAD05FDBCB8992EBF5FE209108F15CD9F7A90367422D2C7FF5BF1",
+    "startupInputSha256":  "41892DC734C9B3DE612DE7FACE8ED2C5BE4D8FB3916A18C58D6C517467873834",
+    "comparison":  "E1 F1 F2 E2, five cold starts per block; no APK builds between blocks; same code/R8/lazy/Baseline input",
+    "baselineInputSha256":  "7B8F53FAFA4DE352D4E0F0029F91323AE4E0C7F7C7A3DE109E09BF2EFADFD693",
+    "controlApkSha256":  "05CAC92B78CBD732B4930F60D7F927EDE68356EF3C30FB126F71A1FFFAF12093",
+    "variant":  "Startup methods with observed ART S flag; captured classes retained"
+}

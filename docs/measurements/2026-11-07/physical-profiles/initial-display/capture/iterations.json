@@ -1,0 +1,222 @@
+﻿[
+    {
+        "iteration":  1,
+        "rules":  17126,
+        "stableCount":  1,
+        "sha256":  "8FF4FD3E2E760A50C8A00DE60D8F981CD8B22A05117307F11A0CBEFBEB818631",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 1912",
+                       "WaitTime: 1917",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  2,
+        "rules":  17147,
+        "stableCount":  1,
+        "sha256":  "8445282891F749E0DAD732251D89F4276E2AC5A611E4702D6ABFCB9D4BD10F47",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 384",
+                       "WaitTime: 389",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  3,
+        "rules":  17210,
+        "stableCount":  1,
+        "sha256":  "3392AD2374B89475E261394C4341A69FD3C896E79EB5332C2CD0F780F9F1CFE5",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 474",
+                       "WaitTime: 478",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  4,
+        "rules":  17241,
+        "stableCount":  1,
+        "sha256":  "3876CE93754DD78FE5F6FEF1EC8B758BB7B4913345FBF3939B38428D30F7AB86",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 480",
+                       "WaitTime: 486",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  5,
+        "rules":  17237,
+        "stableCount":  1,
+        "sha256":  "78951A29707EA53E7E72222D58ED9E73BD4CBC76354880A0941D35779DE92116",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 341",
+                       "WaitTime: 349",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  6,
+        "rules":  17237,
+        "stableCount":  2,
+        "sha256":  "78951A29707EA53E7E72222D58ED9E73BD4CBC76354880A0941D35779DE92116",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 341",
+                       "WaitTime: 349",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  7,
+        "rules":  17224,
+        "stableCount":  1,
+        "sha256":  "9D6FE7974891E1A00587C58F091B1AA80B35B704F80C6C514D0CF6709311D833",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 330",
+                       "WaitTime: 336",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  8,
+        "rules":  17253,
+        "stableCount":  1,
+        "sha256":  "8F0E0CAF960621164A71CA7B81B975F418CCAA9D9D11CA20B0B37D89EF4A86CE",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 362",
+                       "WaitTime: 382",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  9,
+        "rules":  17249,
+        "stableCount":  1,
+        "sha256":  "008C3A204BC887AD4FB5BC7B98A74C5BF546C9DC1CC255850CBC77B87AEAEBA9",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 349",
+                       "WaitTime: 353",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  10,
+        "rules":  17249,
+        "stableCount":  2,
+        "sha256":  "008C3A204BC887AD4FB5BC7B98A74C5BF546C9DC1CC255850CBC77B87AEAEBA9",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 318",
+                       "WaitTime: 327",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    },
+    {
+        "iteration":  11,
+        "rules":  17249,
+        "stableCount":  3,
+        "sha256":  "008C3A204BC887AD4FB5BC7B98A74C5BF546C9DC1CC255850CBC77B87AEAEBA9",
+        "launch":  [
+                       "Stopping: com.example.jetpackcompose.benchmark",
+                       "Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }",
+                       "Status: ok",
+                       "LaunchState: COLD",
+                       "Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity",
+                       "TotalTime: 354",
+                       "WaitTime: 360",
+                       "Complete"
+                   ],
+        "save":  [
+                     "Broadcasting: Intent { act=androidx.profileinstaller.action.SAVE_PROFILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver }",
+                     "Broadcast completed: result=12"
+                 ]
+    }
+]

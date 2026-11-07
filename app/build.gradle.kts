@@ -5,6 +5,13 @@ plugins {
     alias(libs.plugins.ksp)
 }
 
+val startupOptimizations = providers.gradleProperty("startupOptimizations").orElse("true").map(String::toBoolean)
+val optimizeBuild = providers.gradleProperty("optimizeBuild").orElse("true").map(String::toBoolean)
+val appProfiles = providers.gradleProperty("appProfiles").orElse("true").map(String::toBoolean)
+// Apply both profile techniques by default; keep the switch for controlled E/F measurements.
+// A packaged Startup Profile is a build optimization, not a guaranteed timing improvement.
+val startupProfile = providers.gradleProperty("startupProfile").orElse("true").map(String::toBoolean)
+
 android {
     namespace = "com.example.jetpackcompose"
     compileSdk = 37
@@ -17,13 +24,21 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("boolean", "STARTUP_OPTIMIZATIONS", startupOptimizations.get().toString())
     }
 
     buildTypes {
         release {
-            optimization {
-                enable = false
-            }
+            isMinifyEnabled = optimizeBuild.get()
+            isShrinkResources = optimizeBuild.get()
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+        create("benchmark") {
+            initWith(getByName("release"))
+            isDebuggable = false
+            signingConfig = signingConfigs.getByName("debug")
+            applicationIdSuffix = ".benchmark"
+            matchingFallbacks += listOf("release")
         }
     }
     compileOptions {
@@ -32,10 +47,18 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
+    sourceSets.getByName("main").baselineProfiles.setSrcDirs(
+        if (appProfiles.get()) buildList {
+            add("src/main/profiles/baseline")
+            if (startupProfile.get()) add("src/main/profiles/startup")
+        } else emptyList<String>()
+    )
 }
 
 dependencies {
+    implementation("androidx.profileinstaller:profileinstaller:1.4.1")
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)

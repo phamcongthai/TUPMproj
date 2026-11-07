@@ -1,0 +1,53 @@
+﻿INSTRUMENTATION_STATUS: class=com.example.foodapp.macrobenchmark.StartupBenchmark
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.example.foodapp.macrobenchmark.StartupBenchmark:
+INSTRUMENTATION_STATUS: test=coldStartupWithBaselineProfile
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: android.studio.display.benchmark=StartupBenchmark_coldStartupWithBaselineProfile
+  timeToFullDisplayMs      [min 1,071.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace),   [median 1,219.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace),   [max 1,360.9](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace)
+  timeToInitialDisplayMs   [min   898.6](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace),   [median 1,083.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace),   [max 1,160.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace) [1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace) [2](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v2display.benchmark=StartupBenchmark_coldStartupWithBaselineProfile
+  timeToFullDisplayMs      [min 1,071.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace),   [median 1,219.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace),   [max 1,360.9](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace)
+  timeToInitialDisplayMs   [min   898.6](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace),   [median 1,083.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace),   [max 1,160.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace) [1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace) [2](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v2display.benchmark.outputDirPath=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark
+INSTRUMENTATION_STATUS: android.studio.v3display.benchmark=StartupBenchmark_coldStartupWithBaselineProfile
+  timeToFullDisplayMs      [min 1,071.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace),   [median 1,219.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace),   [max 1,360.9](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace)
+  timeToInitialDisplayMs   [min   898.6](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace),   [median 1,083.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace),   [max 1,160.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-07-57-26.perfetto-trace) [1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-07-57-31.perfetto-trace) [2](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-07-57-37.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v3display.benchmark.outputDirPath=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark
+INSTRUMENTATION_STATUS: time_to_full_display_millis_median=1219.391308
+INSTRUMENTATION_STATUS: time_to_full_display_millis_min=1071.413846
+INSTRUMENTATION_STATUS: time_to_full_display_millis_stddev=144.7656579521341
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_median=1083.276
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_min=898.610692
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_stddev=134.50376669638604
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: class=com.example.foodapp.macrobenchmark.StartupBenchmark
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=coldStartupWithBaselineProfile
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 22,989
+
+OK (1 test)
+
+
+INSTRUMENTATION_CODE: -1

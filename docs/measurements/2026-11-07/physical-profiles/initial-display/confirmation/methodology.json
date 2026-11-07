@@ -1,0 +1,21 @@
+﻿{
+    "F":  "Lazy + R8 + Baseline + Startup; Partial Require",
+    "E":  "Lazy + R8 + Baseline; Partial Require",
+    "emulator":  false,
+    "serial":  "5DH6X4WOJJGQAIJB",
+    "iterationsPerBlock":  5,
+    "noBuildBetweenBlocks":  true,
+    "compilationPreparation":  "Fresh uninstall/install per block; skip automatic ProfileInstaller; D verify, E/F explicit INSTALL_PROFILE + speed-profile; benchmark compilation.enabled=false",
+    "order":  [
+                  "F1",
+                  "E1",
+                  "E2",
+                  "F2"
+              ],
+    "externalCompilation":  true,
+    "scenario":  "Logged out cold start to login",
+    "A":  "Eager, no R8; None",
+    "date":  "2026-11-07T16:30:38.0548574+07:00",
+    "fingerprint":  "Redmi/air_in/air:13/TP1A.220624.014/V14.0.8.0.TGQINXM:user/release-keys",
+    "D":  "Same APK as E; CompilationMode.None"
+}

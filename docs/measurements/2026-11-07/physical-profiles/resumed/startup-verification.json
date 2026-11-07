@@ -1,0 +1,32 @@
+{
+  "apkSha256": "0135f36386312e406d134e29f96aeaa02494e8339b34c41c65d595a11d09fc3d",
+  "r8Version": "9.2.14",
+  "startupOptimization": {
+    "isDexLayoutOptimizationEnabled": true,
+    "isProfileGuidedOptimizationEnabled": true
+  },
+  "dexFiles": [
+    {
+      "name": "classes.dex",
+      "bytes": 1596508,
+      "sha256": "6fd0f6ab4f2aa4777b25b4394b828b64162e146fc9e1ce8f58d9ffe87a5e6337",
+      "startup": true,
+      "methodIds": 12208,
+      "classDefs": 1863,
+      "containsMainActivity": true
+    },
+    {
+      "name": "classes2.dex",
+      "bytes": 2450020,
+      "sha256": "d53bfc1b169f3d2964da95dbab021a76d758565de6747234fe65cc8f2b908137",
+      "startup": false,
+      "methodIds": 17478,
+      "classDefs": 2697,
+      "containsMainActivity": false
+    }
+  ],
+  "baselineProfilePackaged": true,
+  "baselineProfileBytes": 10756,
+  "result": "PASS: startup DEX flags and SHA-256 match actual APK contents",
+  "reference": "https://developer.android.com/topic/performance/baselineprofiles/confirm-startup-profiles"
+}

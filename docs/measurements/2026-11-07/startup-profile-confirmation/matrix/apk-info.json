@@ -1,0 +1,17 @@
+﻿[
+    {
+        "configuration":  "A",
+        "bytes":  16096962,
+        "sha256":  "01D12F8FFC6D429040CEE603F7D66D3161C786CADD44389B5D8EBB706B840C09"
+    },
+    {
+        "configuration":  "E",
+        "bytes":  2746797,
+        "sha256":  "BE4C255E2EAEF8D6D46C6E6BBC21BD9413D7BF0C7A9D1CDBF64E7CD716CC7A67"
+    },
+    {
+        "configuration":  "F",
+        "bytes":  2845159,
+        "sha256":  "B94DEDE673758DB0AB1723F1CE751630B8A340491D0154D8BB7ABBC88E25C52D"
+    }
+]

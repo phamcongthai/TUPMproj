@@ -1,0 +1,68 @@
+﻿INSTRUMENTATION_STATUS: class=com.example.foodapp.macrobenchmark.StartupBenchmark
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.example.foodapp.macrobenchmark.StartupBenchmark:
+INSTRUMENTATION_STATUS: test=coldStartupNoCompilation
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: android.studio.display.benchmark=Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+
+StartupBenchmark_coldStartupNoCompilation
+  timeToFullDisplayMs      [min   978.1](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace),   [median 1,005.6](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace),   [max 1,542.4](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace)
+  timeToInitialDisplayMs   [min   743.6](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace),   [median   754.3](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace),   [max 1,212.7](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace) [1](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace) [2](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v2display.benchmark=Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+
+StartupBenchmark_coldStartupNoCompilation
+  timeToFullDisplayMs      [min   978.1](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace),   [median 1,005.6](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace),   [max 1,542.4](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace)
+  timeToInitialDisplayMs   [min   743.6](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace),   [median   754.3](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace),   [max 1,212.7](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace) [1](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace) [2](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v2display.benchmark.outputDirPath=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark
+INSTRUMENTATION_STATUS: android.studio.v3display.benchmark=Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+Unable to clear Runtime Image, subsequent launches/iterations may exhibit faster startup than production due to accelerated class loading.
+
+StartupBenchmark_coldStartupNoCompilation
+  timeToFullDisplayMs      [min   978.1](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace),   [median 1,005.6](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace),   [max 1,542.4](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace)
+  timeToInitialDisplayMs   [min   743.6](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace),   [median   754.3](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace),   [max 1,212.7](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-07-51-10.perfetto-trace) [1](file://StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-07-51-16.perfetto-trace) [2](file://StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-07-51-22.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v3display.benchmark.outputDirPath=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark
+INSTRUMENTATION_STATUS: time_to_full_display_millis_median=1005.631077
+INSTRUMENTATION_STATUS: time_to_full_display_millis_min=978.059769
+INSTRUMENTATION_STATUS: time_to_full_display_millis_stddev=318.1882554643595
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_median=754.339
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_min=743.628
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_stddev=267.79887689147114
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: class=com.example.foodapp.macrobenchmark.StartupBenchmark
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=coldStartupNoCompilation
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 23,271
+
+OK (1 test)
+
+
+INSTRUMENTATION_CODE: -1

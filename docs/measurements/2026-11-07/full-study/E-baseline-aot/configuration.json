@@ -1,0 +1,8 @@
+﻿{
+    "r8":  "true",
+    "name":  "E-baseline-aot",
+    "profiles":  "true",
+    "method":  "coldStartupWithBaselineProfile",
+    "lazy":  "true",
+    "startup":  "false"
+}

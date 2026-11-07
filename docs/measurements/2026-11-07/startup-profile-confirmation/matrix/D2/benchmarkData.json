@@ -1,0 +1,92 @@
+{
+    "context": {
+        "build": {
+            "brand": "google",
+            "device": "emu64xa",
+            "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:17/CE2A.260420.051.A2/16418371:user/release-keys",
+            "id": "CE2A.260420.051.A2",
+            "model": "sdk_gphone64_x86_64",
+            "type": "user",
+            "version": {
+                "codename": "REL",
+                "sdk": 37
+            }
+        },
+        "cpuCoreCount": 4,
+        "cpuLocked": false,
+        "cpuMaxFreqHz": 2000,
+        "memTotalBytes": 4102328320,
+        "sustainedPerformanceModeEnabled": false,
+        "artMainlineVersion": 370546200,
+        "osCodenameAbbreviated": "REL",
+        "compilationMode": "run-from-apk",
+        "payload": {}
+    },
+    "benchmarks": [
+        {
+            "name": "coldStartupNoCompilation",
+            "params": {},
+            "className": "com.example.foodapp.macrobenchmark.StartupBenchmark",
+            "totalRunTimeNs": 64343330835,
+            "metrics": {
+                "timeToFullDisplayMs": {
+                    "minimum": 3546.49891,
+                    "maximum": 4121.384299,
+                    "median": 3711.918877,
+                    "coefficientOfVariation": 0.06267936109973359,
+                    "runs": [
+                        4121.384299,
+                        3546.49891,
+                        3711.918877,
+                        3598.834322,
+                        3905.246132
+                    ]
+                },
+                "timeToInitialDisplayMs": {
+                    "minimum": 2446.7847,
+                    "maximum": 2764.438763,
+                    "median": 2702.914609,
+                    "coefficientOfVariation": 0.059135293423289575,
+                    "runs": [
+                        2752.137145,
+                        2446.7847,
+                        2702.914609,
+                        2472.711298,
+                        2764.438763
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 5,
+            "thermalThrottleSleepSeconds": 0,
+            "profilerOutputs": [
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 0",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-01-56-00.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 1",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-01-56-12.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 2",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-01-56-24.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 3",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter003_2026-11-07-01-56-36.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 4",
+                    "filename": "StartupBenchmark_coldStartupNoCompilation_iter004_2026-11-07-01-56-47.perfetto-trace"
+                }
+            ]
+        }
+    ]
+}

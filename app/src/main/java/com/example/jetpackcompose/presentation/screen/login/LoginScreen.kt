@@ -1,6 +1,8 @@
 package com.example.jetpackcompose.presentation.screen.login
 
 import android.widget.Toast
+import androidx.activity.compose.ReportDrawn
+import com.example.jetpackcompose.BuildConfig
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -42,7 +44,14 @@ fun LoginScreen(
     var passwordVisible by remember { mutableStateOf(false) }
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
-    val credentialManager = CredentialManager.create(context)
+    val credentialManager by remember(context) {
+        lazy { CredentialManager.create(context) }.also {
+            if (!BuildConfig.STARTUP_OPTIMIZATIONS) it.value
+        }
+    }
+
+    // The logged-out screen is usable after its first composition is drawn.
+    ReportDrawn()
 
     LaunchedEffect(loginState) {
         if (loginState is UiState.Success) {

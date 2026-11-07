@@ -1,0 +1,16 @@
+﻿{
+  "sources": [
+    {
+      "path": "build\\startup-study\\physical-api33-capture-20261107\\capture\\baseline-prof.txt",
+      "sha256": "3115fd982a1cf73ed3b6e1e56375fbdb4282533259274d44f036c1bf04a7a2f5",
+      "rules": 18037
+    },
+    {
+      "path": "build\\startup-study\\physical-api33-capture-20261107\\capture\\startup-prof.txt",
+      "sha256": "3115fd982a1cf73ed3b6e1e56375fbdb4282533259274d44f036c1bf04a7a2f5",
+      "rules": 18037
+    }
+  ],
+  "mergedRules": 17977,
+  "sha256": "bcef6dddc92db3ff75549c698850ddb8461266a147457602ec76eebbe7f96e83"
+}

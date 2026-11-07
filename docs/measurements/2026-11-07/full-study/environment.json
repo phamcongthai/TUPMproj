@@ -1,0 +1,29 @@
+﻿{
+    "date":  "2026-11-07T07:05:32.8977598+07:00",
+    "serial":  "emulator-5554",
+    "emulator":  true,
+    "model":  "sdk_gphone64_x86_64",
+    "api":  "37",
+    "iterations":  10,
+    "gitHead":  "17aa98a87e876326c610f4b6f4261435656f0756",
+    "workingTree":  [
+                        " M .idea/misc.xml",
+                        " M app/build.gradle.kts",
+                        " M app/src/main/java/com/example/jetpackcompose/data/datastore/AuthPreference.kt",
+                        " M app/src/main/java/com/example/jetpackcompose/data/repository/AuthRepository.kt",
+                        " M app/src/main/java/com/example/jetpackcompose/presentation/screen/login/LoginScreen.kt",
+                        " M app/src/main/java/com/example/jetpackcompose/presentation/screen/main/MainScreen.kt",
+                        " M build.gradle.kts",
+                        " M gradle/libs.versions.toml",
+                        " M settings.gradle.kts",
+                        "?? .idea/.name",
+                        "?? .idea/codeStyles/",
+                        "?? app/proguard-rules.pro",
+                        "?? app/src/benchmark/",
+                        "?? app/src/main/profiles/",
+                        "?? docs/",
+                        "?? macrobenchmark/",
+                        "?? scripts/"
+                    ],
+    "scenario":  "Logged out; login screen; TTID and TTFD; no backend dependency"
+}

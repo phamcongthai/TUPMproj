@@ -1,0 +1,16 @@
+﻿{
+  "sources": [
+    {
+      "path": "build\\startup-study\\profile-refinement-20261107\\baseline-prof.txt",
+      "sha256": "7288dd8a14b233d764d677c5236f8d160bdc6512370c93b757a54f33994bdf74",
+      "rules": 18169
+    },
+    {
+      "path": "build\\startup-study\\profile-refinement-20261107\\startup-prof.txt",
+      "sha256": "587b3939f456287499d1fcd7c0e83dba0dfad6dcc416bfbe4471ebbfc72c7bba",
+      "rules": 17925
+    }
+  ],
+  "mergedRules": 17712,
+  "sha256": "7b8f53fafa4de352d4e0f0029f91323ae4e0c7f7c7a3de109e09bf2efadfd693"
+}

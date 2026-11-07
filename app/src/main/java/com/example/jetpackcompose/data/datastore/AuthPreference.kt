@@ -12,6 +12,7 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
+import com.example.jetpackcompose.BuildConfig
 
 private val Context.dataStore by preferencesDataStore(name = "auth_prefs")
 
@@ -34,7 +35,12 @@ class AuthPreference @Inject constructor(private val context: Context) {
         val LOCATION_POPUP_SHOWN = stringPreferencesKey("location_popup_shown")
     }
 
-    private val gson = Gson()
+    private val gsonDelegate = lazy { Gson() }
+    private val gson by gsonDelegate
+
+    init {
+        if (!BuildConfig.STARTUP_OPTIMIZATIONS) gsonDelegate.value
+    }
 
     suspend fun saveLocation(address: String, lat: Double, lng: Double) {
         context.dataStore.edit { prefs ->

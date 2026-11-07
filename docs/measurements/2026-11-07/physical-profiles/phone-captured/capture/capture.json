@@ -1,0 +1,11 @@
+﻿{
+    "captureApkSha256":  "6A4131FB054B2C86F6D4DDCACFDDD4C9F56360599594833A3C06EA11D0CAAA66",
+    "iterations":  7,
+    "method":  "Fresh host-side install replaces unavailable non-root reset; skip ProfileInstaller; verify; startup; SAVE_PROFILE; speed-profile merge; pm dump-profiles HRF",
+    "stable":  true,
+    "sameJourneyInBothProfiles":  true,
+    "fingerprint":  "Redmi/air_in/air:13/TP1A.220624.014/V14.0.8.0.TGQINXM:user/release-keys",
+    "scenario":  "Actual Android 13 logged-out launch to Login; observed ART rules only",
+    "stableIterations":  3,
+    "serial":  "5DH6X4WOJJGQAIJB"
+}

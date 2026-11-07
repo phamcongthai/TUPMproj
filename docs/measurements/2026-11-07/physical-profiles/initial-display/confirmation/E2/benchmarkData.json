@@ -1,0 +1,92 @@
+{
+    "context": {
+        "build": {
+            "brand": "Redmi",
+            "device": "air",
+            "fingerprint": "Redmi/air_in/air:13/TP1A.220624.014/V14.0.8.0.TGQINXM:user/release-keys",
+            "id": "TP1A.220624.014",
+            "model": "23124RN87C",
+            "type": "user",
+            "version": {
+                "codename": "REL",
+                "sdk": 33
+            }
+        },
+        "cpuCoreCount": 8,
+        "cpuLocked": true,
+        "cpuMaxFreqHz": 2200000000,
+        "memTotalBytes": 3763265536,
+        "sustainedPerformanceModeEnabled": false,
+        "artMainlineVersion": 372042720,
+        "osCodenameAbbreviated": "T",
+        "compilationMode": "run-from-apk",
+        "payload": {}
+    },
+    "benchmarks": [
+        {
+            "name": "coldStartupWithBaselineProfile",
+            "params": {},
+            "className": "com.example.foodapp.macrobenchmark.StartupBenchmark",
+            "totalRunTimeNs": 115177507391,
+            "metrics": {
+                "timeToFullDisplayMs": {
+                    "minimum": 985.093308,
+                    "maximum": 1557.123,
+                    "median": 1006.652,
+                    "coefficientOfVariation": 0.2184853832836816,
+                    "runs": [
+                        1557.123,
+                        1309.056231,
+                        985.093308,
+                        1006.652,
+                        992.859461
+                    ]
+                },
+                "timeToInitialDisplayMs": {
+                    "minimum": 860.711077,
+                    "maximum": 1393.450769,
+                    "median": 896.540615,
+                    "coefficientOfVariation": 0.22780605724958852,
+                    "runs": [
+                        1393.450769,
+                        1159.431385,
+                        865.091077,
+                        896.540615,
+                        860.711077
+                    ]
+                }
+            },
+            "sampledMetrics": {},
+            "warmupIterations": 0,
+            "repeatIterations": 5,
+            "thermalThrottleSleepSeconds": 0,
+            "profilerOutputs": [
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 0",
+                    "filename": "StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-37-46.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 1",
+                    "filename": "StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-38-10.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 2",
+                    "filename": "StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-38-32.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 3",
+                    "filename": "StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-09-38-55.perfetto-trace"
+                },
+                {
+                    "type": "PerfettoTrace",
+                    "label": "Trace Iteration 4",
+                    "filename": "StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-09-39-17.perfetto-trace"
+                }
+            ]
+        }
+    ]
+}

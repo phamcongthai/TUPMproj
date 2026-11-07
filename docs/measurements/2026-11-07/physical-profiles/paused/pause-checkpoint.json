@@ -1,0 +1,42 @@
+﻿[
+    {
+        "block":  "D1",
+        "report":  true,
+        "testLog":  true
+    },
+    {
+        "block":  "D2",
+        "report":  true,
+        "testLog":  true
+    },
+    {
+        "block":  "E1",
+        "report":  true,
+        "testLog":  true
+    },
+    {
+        "block":  "E2",
+        "report":  true,
+        "testLog":  true
+    },
+    {
+        "block":  "E3",
+        "report":  true,
+        "testLog":  true
+    },
+    {
+        "block":  "F1",
+        "report":  true,
+        "testLog":  true
+    },
+    {
+        "block":  "F2",
+        "report":  true,
+        "testLog":  true
+    },
+    {
+        "block":  "F3",
+        "report":  false,
+        "testLog":  false
+    }
+]

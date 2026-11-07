@@ -1,0 +1,5 @@
+﻿"configuration","metric","n","medianMs","meanMs","minimumMs","maximumMs"
+"A","timeToInitialDisplayMs","10","1617.2024595","1857.5236709","1317.939706","2795.811234"
+"A","timeToFullDisplayMs","10","2293.0348155","2639.1885416","1945.175936","3687.922201"
+"E","timeToInitialDisplayMs","10","1390.739154","1436.3293734","957.076294","2138.504714"
+"E","timeToFullDisplayMs","10","1698.688255","1752.324402","1139.686685","2510.906871"

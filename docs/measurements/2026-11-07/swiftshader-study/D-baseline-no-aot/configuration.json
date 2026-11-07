@@ -1,0 +1,8 @@
+﻿{
+    "r8":  "true",
+    "name":  "D-baseline-no-aot",
+    "profiles":  "true",
+    "method":  "coldStartupNoCompilation",
+    "lazy":  "true",
+    "startup":  "false"
+}

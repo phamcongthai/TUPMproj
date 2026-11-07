@@ -1,0 +1,5 @@
+﻿{
+    "apkSha256":  "6E98DD1910B8F4F7278738BD9BF84C771535D38F567933D7802E8CA7AE458103",
+    "smoke":  "PASS",
+    "note":  "Functional validation only; not part of timed study"
+}

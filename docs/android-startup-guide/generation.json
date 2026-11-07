@@ -1,0 +1,14 @@
+{
+  "generatedAtUtc": "2026-11-07T01:42:44.871274+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "graphvizPython": "0.20.3",
+  "markdown": "3.11.3",
+  "dot": "dot - graphviz version 14.1.0 (20251206.1807)",
+  "diagramLibrary": "https://github.com/mingrammer/diagrams",
+  "diagrams": {
+    "version": "0.25.1",
+    "count": 8,
+    "implementation": "build_diagrams.py imports Diagram, Cluster, Edge, Node directly"
+  },
+  "charts": "System.Windows.Forms.DataVisualization.Charting from raw Macrobenchmark JSON"
+}

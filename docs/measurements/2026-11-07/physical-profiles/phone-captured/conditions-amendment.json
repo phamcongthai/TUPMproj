@@ -1,0 +1,7 @@
+﻿{
+  "study": "physical-api33-profiles-20261107",
+  "userConfirmedPhoneUseDuringStudy": true,
+  "source": "User confirmed use of the phone during approximately 15:34-15:48 on 2026-11-07",
+  "interpretation": "Retain all observations as exploratory/confounded. Do not use this session to establish causal performance benefits. Data-integrity audit PASS does not verify device idleness.",
+  "nextStep": "Repeat the predeclared full D/E/F sequence while the user leaves the device untouched."
+}

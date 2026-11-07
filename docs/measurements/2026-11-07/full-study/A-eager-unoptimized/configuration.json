@@ -1,0 +1,8 @@
+﻿{
+    "r8":  "false",
+    "name":  "A-eager-unoptimized",
+    "profiles":  "false",
+    "method":  "coldStartupNoCompilation",
+    "lazy":  "false",
+    "startup":  "false"
+}

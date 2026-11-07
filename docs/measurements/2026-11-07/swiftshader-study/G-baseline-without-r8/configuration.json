@@ -1,0 +1,8 @@
+﻿{
+    "r8":  "false",
+    "name":  "G-baseline-without-r8",
+    "profiles":  "true",
+    "method":  "coldStartupWithBaselineProfile",
+    "lazy":  "true",
+    "startup":  "false"
+}

@@ -1,0 +1,121 @@
+phase,name,ts,wall_ms,scheduled_cpu_ms,block,configuration,trace
+bind_application,bindApplication,783726024521,801.856387,151.078781,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-01-59-50.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~boUqXXW7Ix9sT8xGExWUDg==/com.example.jetpackcompose.benchmark-NZuVaqqDGmNou7LcOjDakw==/base.apk),783875858552,289.823047,67.896056,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-01-59-50.perfetto-trace
+activity_start,activityStart,784537406245,290.103072,56.786659,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-01-59-50.perfetto-trace
+activity_resume,activityResume,784831404267,239.262870,38.426289,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-01-59-50.perfetto-trace
+render_wait,postAndWait,785224960867,1.139312,0.043598,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-01-59-50.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,786414608805,0.465152,0.465152,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-01-59-50.perfetto-trace
+bind_application,bindApplication,794487990075,381.458053,128.951354,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-00-00.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~boUqXXW7Ix9sT8xGExWUDg==/com.example.jetpackcompose.benchmark-NZuVaqqDGmNou7LcOjDakw==/base.apk),794585991579,160.942245,53.776400,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-00-00.perfetto-trace
+activity_start,activityStart,794870770668,279.459163,58.346748,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-00-00.perfetto-trace
+activity_resume,activityResume,795176897384,306.488924,29.868262,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-00-00.perfetto-trace
+render_wait,postAndWait,795694543171,1.793604,0.195180,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-00-00.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,796836382888,0.545062,0.119450,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-00-00.perfetto-trace
+bind_application,bindApplication,804986381961,403.804628,185.484778,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-00-11.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~boUqXXW7Ix9sT8xGExWUDg==/com.example.jetpackcompose.benchmark-NZuVaqqDGmNou7LcOjDakw==/base.apk),805048179858,177.853557,82.375832,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-00-11.perfetto-trace
+activity_start,activityStart,805391052876,90.550003,33.601230,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-00-11.perfetto-trace
+activity_resume,activityResume,805483009461,470.825420,20.564653,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-00-11.perfetto-trace
+render_wait,postAndWait,806105042749,24.614392,0.025421,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-00-11.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,807231910860,0.310618,0.310618,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-00-11.perfetto-trace
+bind_application,bindApplication,815117024476,376.252925,115.411027,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-00-21.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~boUqXXW7Ix9sT8xGExWUDg==/com.example.jetpackcompose.benchmark-NZuVaqqDGmNou7LcOjDakw==/base.apk),815132776424,167.273835,44.816389,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-00-21.perfetto-trace
+activity_start,activityStart,815528651381,217.703921,71.670712,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-00-21.perfetto-trace
+activity_resume,activityResume,815749906818,202.993850,14.120022,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-00-21.perfetto-trace
+render_wait,postAndWait,816095394358,4.107133,0.043322,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-00-21.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,817260404741,0.281912,0.281912,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-00-21.perfetto-trace
+bind_application,bindApplication,824990648838,431.274636,170.958078,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-00-31.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~boUqXXW7Ix9sT8xGExWUDg==/com.example.jetpackcompose.benchmark-NZuVaqqDGmNou7LcOjDakw==/base.apk),825010643110,216.019553,103.404306,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-00-31.perfetto-trace
+activity_start,activityStart,825423479302,205.861424,48.499119,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-00-31.perfetto-trace
+activity_resume,activityResume,825630295113,373.549388,31.019393,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-00-31.perfetto-trace
+render_wait,postAndWait,826147333963,0.823965,0.028399,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-00-31.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,827288696138,0.316558,0.316558,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-00-31.perfetto-trace
+bind_application,bindApplication,987864772875,507.724122,160.335555,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-03-14.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~wVqFybC0fLnwQDABRiVT1w==/com.example.jetpackcompose.benchmark-PZk2TaxzYQmox3AXQ4yjEQ==/base.apk),987895505888,222.689433,82.869962,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-03-14.perfetto-trace
+activity_start,activityStart,988381427347,309.404137,71.858101,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-03-14.perfetto-trace
+activity_resume,activityResume,988702890094,161.792429,19.865791,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-03-14.perfetto-trace
+render_wait,postAndWait,989006019834,1.349637,0.028654,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-03-14.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,990236749040,0.299217,0.299217,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-03-14.perfetto-trace
+bind_application,bindApplication,999727025503,467.985766,124.973067,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-03-25.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~wVqFybC0fLnwQDABRiVT1w==/com.example.jetpackcompose.benchmark-PZk2TaxzYQmox3AXQ4yjEQ==/base.apk),999766239568,193.255258,48.308791,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-03-25.perfetto-trace
+activity_start,activityStart,1000199195122,178.878809,78.590698,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-03-25.perfetto-trace
+activity_resume,activityResume,1000379084728,106.831814,18.431874,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-03-25.perfetto-trace
+render_wait,postAndWait,1000594490585,1.300726,0.038425,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-03-25.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,1001738479989,18.832547,0.202031,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-03-25.perfetto-trace
+bind_application,bindApplication,1009679116036,354.654354,128.006112,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-03-36.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~wVqFybC0fLnwQDABRiVT1w==/com.example.jetpackcompose.benchmark-PZk2TaxzYQmox3AXQ4yjEQ==/base.apk),1009723223594,169.213123,72.913573,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-03-36.perfetto-trace
+activity_start,activityStart,1010040798683,188.719432,51.458447,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-03-36.perfetto-trace
+activity_resume,activityResume,1010239142068,467.297386,20.372922,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-03-36.perfetto-trace
+render_wait,postAndWait,1010815653910,2.314030,0.043638,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-03-36.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,1012108827597,0.414874,0.414874,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-03-36.perfetto-trace
+bind_application,bindApplication,1019745888675,780.500444,167.593364,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-03-46.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~wVqFybC0fLnwQDABRiVT1w==/com.example.jetpackcompose.benchmark-PZk2TaxzYQmox3AXQ4yjEQ==/base.apk),1019818292833,287.495904,89.361489,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-03-46.perfetto-trace
+activity_start,activityStart,1020528564436,131.413194,43.178216,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-03-46.perfetto-trace
+activity_resume,activityResume,1020665080367,164.199767,25.403361,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-03-46.perfetto-trace
+render_wait,postAndWait,1020944444885,9.505307,0.037880,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-03-46.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,1022079317110,7.609102,7.314700,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-03-46.perfetto-trace
+bind_application,bindApplication,1030290693659,368.953871,130.550507,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-03-56.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~wVqFybC0fLnwQDABRiVT1w==/com.example.jetpackcompose.benchmark-PZk2TaxzYQmox3AXQ4yjEQ==/base.apk),1030307927742,141.115931,56.047384,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-03-56.perfetto-trace
+activity_start,activityStart,1030673908418,131.286551,51.025629,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-03-56.perfetto-trace
+activity_resume,activityResume,1030809239475,299.765878,19.868580,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-03-56.perfetto-trace
+render_wait,postAndWait,1031222490851,2.564262,0.023694,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-03-56.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,1032826390523,1.051972,1.051972,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-03-56.perfetto-trace
+bind_application,bindApplication,852336161463,340.977637,100.995593,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-00-59.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~5cq-fz8nWzost2lGskS0Yg==/com.example.jetpackcompose.benchmark-YWrbfeH4Mw4OxyTAX8Epbw==/base.apk),852399608894,161.623809,41.120478,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-00-59.perfetto-trace
+activity_start,activityStart,852679696195,258.498075,80.947938,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-00-59.perfetto-trace
+activity_resume,activityResume,852948371685,321.074869,27.720582,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-00-59.perfetto-trace
+render_wait,postAndWait,853377600697,0.991162,0.039083,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-00-59.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,854514741664,0.731367,0.406239,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-00-59.perfetto-trace
+bind_application,bindApplication,863120848974,436.715148,135.485129,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-01-09.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~5cq-fz8nWzost2lGskS0Yg==/com.example.jetpackcompose.benchmark-YWrbfeH4Mw4OxyTAX8Epbw==/base.apk),863141540901,177.888095,75.765209,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-01-09.perfetto-trace
+activity_start,activityStart,863561061847,202.718907,67.420152,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-01-09.perfetto-trace
+activity_resume,activityResume,863765841294,363.367982,35.880404,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-01-09.perfetto-trace
+render_wait,postAndWait,864253695281,4.492157,0.074950,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-01-09.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,865484086335,22.742873,4.448541,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-01-09.perfetto-trace
+bind_application,bindApplication,873413704865,407.890944,137.229922,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-01-19.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~5cq-fz8nWzost2lGskS0Yg==/com.example.jetpackcompose.benchmark-YWrbfeH4Mw4OxyTAX8Epbw==/base.apk),873445718759,158.262560,72.584068,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-01-19.perfetto-trace
+activity_start,activityStart,873825000400,170.229915,79.462230,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-01-19.perfetto-trace
+activity_resume,activityResume,874003222036,295.824530,37.501111,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-01-19.perfetto-trace
+render_wait,postAndWait,874395476833,2.092401,0.021041,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-01-19.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,875498090714,0.462946,0.361906,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-01-19.perfetto-trace
+bind_application,bindApplication,883551136239,375.177577,98.265598,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-01-29.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~5cq-fz8nWzost2lGskS0Yg==/com.example.jetpackcompose.benchmark-YWrbfeH4Mw4OxyTAX8Epbw==/base.apk),883582045272,243.966874,48.827372,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-01-29.perfetto-trace
+activity_start,activityStart,884028612242,136.537673,52.260535,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-01-29.perfetto-trace
+activity_resume,activityResume,884167785676,270.918415,18.845296,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-01-29.perfetto-trace
+render_wait,postAndWait,884554010277,3.516018,0.416816,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-01-29.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,885797898904,0.340944,0.340944,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-01-29.perfetto-trace
+bind_application,bindApplication,893768724348,449.356231,152.751064,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-01-39.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~5cq-fz8nWzost2lGskS0Yg==/com.example.jetpackcompose.benchmark-YWrbfeH4Mw4OxyTAX8Epbw==/base.apk),893808712006,185.962406,76.609363,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-01-39.perfetto-trace
+activity_start,activityStart,894218986281,265.241657,91.960195,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-01-39.perfetto-trace
+activity_resume,activityResume,894506735113,160.698608,30.765460,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-01-39.perfetto-trace
+render_wait,postAndWait,894795796845,1.102061,0.115223,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-01-39.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,895929940139,5.345245,0.212391,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-01-39.perfetto-trace
+bind_application,bindApplication,921824869133,397.653413,145.489532,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-02-08.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~WVHxxln6HM2cVPTD4uMmqA==/com.example.jetpackcompose.benchmark-wTGwFrHD-__MfxXgB89slw==/base.apk),921889709720,210.530144,76.781622,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-02-08.perfetto-trace
+activity_start,activityStart,922226730720,177.116253,61.257885,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-02-08.perfetto-trace
+activity_resume,activityResume,922409643566,336.189106,22.929219,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-02-08.perfetto-trace
+render_wait,postAndWait,922857446402,2.513947,0.025744,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-02-08.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,924195984699,0.173249,0.173249,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-02-02-08.perfetto-trace
+bind_application,bindApplication,931991192391,333.722862,114.256537,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-02-17.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~WVHxxln6HM2cVPTD4uMmqA==/com.example.jetpackcompose.benchmark-wTGwFrHD-__MfxXgB89slw==/base.apk),932011627402,210.044780,58.248690,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-02-17.perfetto-trace
+activity_start,activityStart,932332353819,255.619112,57.066689,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-02-17.perfetto-trace
+activity_resume,activityResume,932590401534,233.899355,19.422427,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-02-17.perfetto-trace
+render_wait,postAndWait,932919493132,7.447846,0.366792,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-02-17.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,933962613937,0.165166,0.165166,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-02-02-17.perfetto-trace
+bind_application,bindApplication,941255119537,467.561277,95.511113,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-02-27.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~WVHxxln6HM2cVPTD4uMmqA==/com.example.jetpackcompose.benchmark-wTGwFrHD-__MfxXgB89slw==/base.apk),941318263770,178.080219,45.478733,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-02-27.perfetto-trace
+activity_start,activityStart,941735717234,198.962642,64.644812,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-02-27.perfetto-trace
+activity_resume,activityResume,941936747118,293.119108,27.922000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-02-27.perfetto-trace
+render_wait,postAndWait,942347685945,1.352281,0.056771,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-02-27.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,943871029668,18.776524,0.288487,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-02-02-27.perfetto-trace
+bind_application,bindApplication,951034836588,627.455448,187.414098,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-02-37.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~WVHxxln6HM2cVPTD4uMmqA==/com.example.jetpackcompose.benchmark-wTGwFrHD-__MfxXgB89slw==/base.apk),951063899437,284.803579,117.726236,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-02-37.perfetto-trace
+activity_start,activityStart,951663309596,339.253691,87.647505,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-02-37.perfetto-trace
+activity_resume,activityResume,952006047607,212.436094,18.522456,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-02-37.perfetto-trace
+render_wait,postAndWait,952349030995,3.986844,0.029674,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-02-37.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,953515359861,11.015948,3.936903,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-02-02-37.perfetto-trace
+bind_application,bindApplication,961511614013,583.418433,213.680435,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-02-47.perfetto-trace
+open_dex,OpenDexFilesFromOat(/data/app/~~WVHxxln6HM2cVPTD4uMmqA==/com.example.jetpackcompose.benchmark-wTGwFrHD-__MfxXgB89slw==/base.apk),961541380656,267.003793,122.356087,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-02-47.perfetto-trace
+activity_start,activityStart,962111857320,154.188008,88.296242,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-02-47.perfetto-trace
+activity_resume,activityResume,962277118381,182.739462,47.693913,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-02-47.perfetto-trace
+render_wait,postAndWait,962574941679,6.126023,0.158059,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-02-47.perfetto-trace
+fully_drawn,reportFullyDrawn() for ComponentActivity,963761726196,0.269722,0.269722,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-02-02-47.perfetto-trace

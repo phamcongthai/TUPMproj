@@ -1,0 +1,74 @@
+﻿[
+    {
+        "configuration":  "A",
+        "metric":  "timeToInitialDisplayMs",
+        "n":  10,
+        "medianMs":  2589.106087,
+        "minimumMs":  1134.517572,
+        "maximumMs":  3447.529196,
+        "meanMs":  2240.0658294
+    },
+    {
+        "configuration":  "A",
+        "metric":  "timeToFullDisplayMs",
+        "n":  10,
+        "medianMs":  3795.356229,
+        "minimumMs":  1659.394411,
+        "maximumMs":  4851.643418,
+        "meanMs":  3364.1831191000006
+    },
+    {
+        "configuration":  "D",
+        "metric":  "timeToInitialDisplayMs",
+        "n":  10,
+        "medianMs":  1876.7860640000001,
+        "minimumMs":  1061.096723,
+        "maximumMs":  2764.438763,
+        "meanMs":  1897.2165113000003
+    },
+    {
+        "configuration":  "D",
+        "metric":  "timeToFullDisplayMs",
+        "n":  10,
+        "medianMs":  2734.269248,
+        "minimumMs":  1411.810004,
+        "maximumMs":  4121.384299,
+        "meanMs":  2694.1689949
+    },
+    {
+        "configuration":  "E",
+        "metric":  "timeToInitialDisplayMs",
+        "n":  10,
+        "medianMs":  1903.714212,
+        "minimumMs":  1083.605328,
+        "maximumMs":  3066.829817,
+        "meanMs":  1939.8561739999998
+    },
+    {
+        "configuration":  "E",
+        "metric":  "timeToFullDisplayMs",
+        "n":  10,
+        "medianMs":  2362.2339555,
+        "minimumMs":  1278.460941,
+        "maximumMs":  3617.117616,
+        "meanMs":  2370.1979263000003
+    },
+    {
+        "configuration":  "F",
+        "metric":  "timeToInitialDisplayMs",
+        "n":  10,
+        "medianMs":  1155.7650195,
+        "minimumMs":  994.190717,
+        "maximumMs":  1328.896495,
+        "meanMs":  1162.5957482999997
+    },
+    {
+        "configuration":  "F",
+        "metric":  "timeToFullDisplayMs",
+        "n":  10,
+        "medianMs":  1372.9553615,
+        "minimumMs":  1237.611202,
+        "maximumMs":  1685.774573,
+        "meanMs":  1432.1282663000002
+    }
+]

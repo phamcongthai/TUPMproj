@@ -1,0 +1,128 @@
+[
+  {
+    "configuration": "D",
+    "phase": "app_main_interval",
+    "traces": 9,
+    "wall_ms_median": 896.254077,
+    "scheduled_cpu_ms_median": 226.538087
+  },
+  {
+    "configuration": "D",
+    "phase": "state:D",
+    "traces": 9,
+    "wall_ms_median": 155.584619,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "D",
+    "phase": "state:R",
+    "traces": 9,
+    "wall_ms_median": 50.697607,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "D",
+    "phase": "state:R+",
+    "traces": 9,
+    "wall_ms_median": 15.393383,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "D",
+    "phase": "state:Running",
+    "traces": 9,
+    "wall_ms_median": 226.538087,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "D",
+    "phase": "state:S",
+    "traces": 9,
+    "wall_ms_median": 474.350158,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "E",
+    "phase": "app_main_interval",
+    "traces": 9,
+    "wall_ms_median": 914.721308,
+    "scheduled_cpu_ms_median": 175.93617
+  },
+  {
+    "configuration": "E",
+    "phase": "state:D",
+    "traces": 9,
+    "wall_ms_median": 165.468231,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "E",
+    "phase": "state:R",
+    "traces": 9,
+    "wall_ms_median": 43.6603,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "E",
+    "phase": "state:R+",
+    "traces": 9,
+    "wall_ms_median": 21.367546,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "E",
+    "phase": "state:Running",
+    "traces": 9,
+    "wall_ms_median": 175.93617,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "E",
+    "phase": "state:S",
+    "traces": 9,
+    "wall_ms_median": 456.997233,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "F",
+    "phase": "app_main_interval",
+    "traces": 9,
+    "wall_ms_median": 941.603692,
+    "scheduled_cpu_ms_median": 177.057376
+  },
+  {
+    "configuration": "F",
+    "phase": "state:D",
+    "traces": 9,
+    "wall_ms_median": 118.522304,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "F",
+    "phase": "state:R",
+    "traces": 9,
+    "wall_ms_median": 43.772158,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "F",
+    "phase": "state:R+",
+    "traces": 9,
+    "wall_ms_median": 16.505778,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "F",
+    "phase": "state:Running",
+    "traces": 9,
+    "wall_ms_median": 177.057376,
+    "scheduled_cpu_ms_median": 0.0
+  },
+  {
+    "configuration": "F",
+    "phase": "state:S",
+    "traces": 9,
+    "wall_ms_median": 517.27531,
+    "scheduled_cpu_ms_median": 0.0
+  }
+]

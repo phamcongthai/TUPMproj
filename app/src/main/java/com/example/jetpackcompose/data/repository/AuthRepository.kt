@@ -6,6 +6,8 @@ import com.example.jetpackcompose.utils.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
+import dagger.Lazy
+import com.example.jetpackcompose.BuildConfig
 
 interface AuthRepository {
     fun login(request: LoginRequest): Flow<Resource<AuthData>>
@@ -18,41 +20,46 @@ interface AuthRepository {
 }
 
 class AuthRepositoryImpl @Inject constructor(
-    private val apiService: ApiService
+    private val apiService: Lazy<ApiService>
 ) : BaseRepository(), AuthRepository {
+
+    init {
+        // Experiment switch reproduces the previous eager network initialization.
+        if (!BuildConfig.STARTUP_OPTIMIZATIONS) apiService.get()
+    }
 
     override fun login(request: LoginRequest) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { apiService.login(request) })
+        emit(safeApiCall { apiService.get().login(request) })
     }
 
     override fun register(request: RegisterRequest) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { apiService.register(request) })
+        emit(safeApiCall { apiService.get().register(request) })
     }
 
     override fun googleLogin(request: GoogleLoginRequest) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { apiService.googleLogin(request) })
+        emit(safeApiCall { apiService.get().googleLogin(request) })
     }
 
     override fun getAccount() = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { apiService.getAccount() })
+        emit(safeApiCall { apiService.get().getAccount() })
     }
 
     override fun logout() = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { apiService.logout() })
+        emit(safeApiCall { apiService.get().logout() })
     }
 
     override fun updateUser(id: String, request: UpdateUserRequest) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { apiService.updateUser(id, request) })
+        emit(safeApiCall { apiService.get().updateUser(id, request) })
     }
 
     override fun updatePassword(request: UpdatePasswordRequest) = flow {
         emit(Resource.Loading())
-        emit(safeApiCall { apiService.updatePassword(request) })
+        emit(safeApiCall { apiService.get().updatePassword(request) })
     }
 }

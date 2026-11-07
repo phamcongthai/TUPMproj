@@ -1,0 +1,19 @@
+﻿{
+    "scenario":  "Logged out cold start to login",
+    "E":  "Lazy + R8 + Baseline; Partial Require",
+    "D":  "Same APK as E; CompilationMode.None",
+    "F":  "Lazy + R8 + Baseline + Startup; Partial Require",
+    "order":  [
+                  "E1",
+                  "F1",
+                  "F2",
+                  "E2"
+              ],
+    "emulator":  true,
+    "date":  "2026-11-07T08:59:27.9392209+07:00",
+    "fingerprint":  "google/sdk_gphone64_x86_64/emu64xa:17/CE2A.260420.051.A2/16418371:user/release-keys",
+    "A":  "Eager, no R8; None",
+    "noBuildBetweenBlocks":  true,
+    "serial":  "emulator-5554",
+    "iterationsPerBlock":  5
+}

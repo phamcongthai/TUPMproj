@@ -1,0 +1,86 @@
+[
+  {
+    "configuration": "E",
+    "phase": "activity_resume",
+    "traces": 10,
+    "wall_ms_median": 269.514374,
+    "scheduled_cpu_ms_median": 20.468787499999998
+  },
+  {
+    "configuration": "E",
+    "phase": "activity_start",
+    "traces": 10,
+    "wall_ms_median": 197.29042800000002,
+    "scheduled_cpu_ms_median": 54.122552999999996
+  },
+  {
+    "configuration": "E",
+    "phase": "bind_application",
+    "traces": 10,
+    "wall_ms_median": 417.539632,
+    "scheduled_cpu_ms_median": 140.814644
+  },
+  {
+    "configuration": "E",
+    "phase": "fully_drawn",
+    "traces": 10,
+    "wall_ms_median": 0.440013,
+    "scheduled_cpu_ms_median": 0.313588
+  },
+  {
+    "configuration": "E",
+    "phase": "open_dex",
+    "traces": 10,
+    "wall_ms_median": 185.5544075,
+    "scheduled_cpu_ms_median": 70.4048145
+  },
+  {
+    "configuration": "E",
+    "phase": "render_wait",
+    "traces": 10,
+    "wall_ms_median": 2.053817,
+    "scheduled_cpu_ms_median": 0.0381525
+  },
+  {
+    "configuration": "F",
+    "phase": "activity_resume",
+    "traces": 10,
+    "wall_ms_median": 282.0187615,
+    "scheduled_cpu_ms_median": 27.821291000000002
+  },
+  {
+    "configuration": "F",
+    "phase": "activity_start",
+    "traces": 10,
+    "wall_ms_median": 200.8407745,
+    "scheduled_cpu_ms_median": 73.441191
+  },
+  {
+    "configuration": "F",
+    "phase": "bind_application",
+    "traces": 10,
+    "wall_ms_median": 422.303046,
+    "scheduled_cpu_ms_median": 136.3575255
+  },
+  {
+    "configuration": "F",
+    "phase": "fully_drawn",
+    "traces": 10,
+    "wall_ms_median": 0.5971565,
+    "scheduled_cpu_ms_median": 0.31471550000000004
+  },
+  {
+    "configuration": "F",
+    "phase": "open_dex",
+    "traces": 10,
+    "wall_ms_median": 198.003593,
+    "scheduled_cpu_ms_median": 74.1746385
+  },
+  {
+    "configuration": "F",
+    "phase": "render_wait",
+    "traces": 10,
+    "wall_ms_median": 3.0149825,
+    "scheduled_cpu_ms_median": 0.0658605
+  }
+]

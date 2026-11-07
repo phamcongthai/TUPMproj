@@ -1,0 +1,8 @@
+﻿{
+    "userConfirmedHandsOff":  true,
+    "confirmation":  "User agreed to leave the phone connected, unlocked and untouched for this next test",
+    "primaryMetric":  "Median TTID",
+    "secondaryMetric":  "TTFD, with all runs and ranges retained",
+    "hypothesis":  "Initial-display capture excludes late work from Startup Profile",
+    "predeclaredPlan":  "../plan.txt"
+}

@@ -47,15 +47,13 @@ fun MainScreen(
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.Home.route) {
-                val viewModel: HomeViewModel = hiltViewModel()
                 HomeScreen(
-                    viewModel = viewModel,
+                    viewModel = homeViewModel,
                     onNavigateToDetail = onNavigateToDetail
                 )
             }
             composable(Screen.Menu.route) {
                 val viewModel: MenuViewModel = hiltViewModel()
-                val homeViewModel: HomeViewModel = hiltViewModel()
                 MenuScreen(viewModel, homeViewModel, onNavigateToDetail)
             }
             composable(Screen.Cart.route) {

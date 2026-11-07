@@ -1,0 +1,57 @@
+﻿INSTRUMENTATION_STATUS: class=com.example.foodapp.macrobenchmark.StartupBenchmark
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.example.foodapp.macrobenchmark.StartupBenchmark:
+INSTRUMENTATION_STATUS: test=coldStartupWithBaselineProfile
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-13-45.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-13-45.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-08-13-56.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-08-13-56.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: additionalTestOutputFile_StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-08-14-01.perfetto-trace=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark/StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-08-14-01.perfetto-trace
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: android.studio.display.benchmark=StartupBenchmark_coldStartupWithBaselineProfile
+  timeToFullDisplayMs      [min   847.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-08-14-01.perfetto-trace),   [median   918.1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace),   [max 1,398.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace)
+  timeToInitialDisplayMs   [min   719.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-13-45.perfetto-trace),   [median   796.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace),   [max 1,252.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace) [1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-13-45.perfetto-trace) [2](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace) [3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-08-13-56.perfetto-trace) [4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-08-14-01.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v2display.benchmark=StartupBenchmark_coldStartupWithBaselineProfile
+  timeToFullDisplayMs      [min   847.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-08-14-01.perfetto-trace),   [median   918.1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace),   [max 1,398.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace)
+  timeToInitialDisplayMs   [min   719.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-13-45.perfetto-trace),   [median   796.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace),   [max 1,252.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace) [1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-13-45.perfetto-trace) [2](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace) [3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-08-13-56.perfetto-trace) [4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-08-14-01.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v2display.benchmark.outputDirPath=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark
+INSTRUMENTATION_STATUS: android.studio.v3display.benchmark=StartupBenchmark_coldStartupWithBaselineProfile
+  timeToFullDisplayMs      [min   847.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-08-14-01.perfetto-trace),   [median   918.1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace),   [max 1,398.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace)
+  timeToInitialDisplayMs   [min   719.4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-13-45.perfetto-trace),   [median   796.0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace),   [max 1,252.3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace)
+    Traces: Iteration [0](file://StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-13-40.perfetto-trace) [1](file://StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-13-45.perfetto-trace) [2](file://StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-13-50.perfetto-trace) [3](file://StartupBenchmark_coldStartupWithBaselineProfile_iter003_2026-11-07-08-13-56.perfetto-trace) [4](file://StartupBenchmark_coldStartupWithBaselineProfile_iter004_2026-11-07-08-14-01.perfetto-trace)
+
+INSTRUMENTATION_STATUS: android.studio.v3display.benchmark.outputDirPath=/storage/emulated/0/Android/media/com.example.foodapp.macrobenchmark
+INSTRUMENTATION_STATUS: time_to_full_display_millis_median=918.116615
+INSTRUMENTATION_STATUS: time_to_full_display_millis_min=846.973
+INSTRUMENTATION_STATUS: time_to_full_display_millis_stddev=226.46697004618107
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_median=795.993154
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_min=719.408539
+INSTRUMENTATION_STATUS: time_to_initial_display_millis_stddev=221.53662903291544
+INSTRUMENTATION_STATUS_CODE: 2
+INSTRUMENTATION_STATUS: class=com.example.foodapp.macrobenchmark.StartupBenchmark
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: test=coldStartupWithBaselineProfile
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_RESULT: stream=
+
+Time: 31,744
+
+OK (1 test)
+
+
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,38 @@
+﻿[
+    {
+        "configuration":  "E",
+        "metric":  "timeToInitialDisplayMs",
+        "n":  10,
+        "medianMs":  2481.7690235,
+        "minimumMs":  2379.984735,
+        "maximumMs":  2797.5281879999998,
+        "meanMs":  2537.4893882
+    },
+    {
+        "configuration":  "E",
+        "metric":  "timeToFullDisplayMs",
+        "n":  10,
+        "medianMs":  3073.5787760000003,
+        "minimumMs":  2995.166105,
+        "maximumMs":  3530.019128,
+        "meanMs":  3156.6577702999994
+    },
+    {
+        "configuration":  "F",
+        "metric":  "timeToInitialDisplayMs",
+        "n":  10,
+        "medianMs":  2561.545982,
+        "minimumMs":  2440.503784,
+        "maximumMs":  2706.53041,
+        "meanMs":  2556.4296372
+    },
+    {
+        "configuration":  "F",
+        "metric":  "timeToFullDisplayMs",
+        "n":  10,
+        "medianMs":  3186.1283525,
+        "minimumMs":  2988.40056,
+        "maximumMs":  3336.75599,
+        "meanMs":  3179.8416224999996
+    }
+]

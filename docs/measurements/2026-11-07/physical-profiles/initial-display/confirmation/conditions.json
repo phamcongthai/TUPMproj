@@ -1,0 +1,10 @@
+﻿{
+    "userConfirmedHandsOff":  true,
+    "scope":  "Same next-test hands-off window",
+    "primaryMetric":  "Median TTID",
+    "secondaryMetric":  "TTFD with all runs and ranges",
+    "order":  "FEEF",
+    "sameApksAsExploratory":  true,
+    "plan":  "../confirmation-plan.txt",
+    "noPooling":  true
+}

@@ -1,0 +1,163 @@
+phase,name,ts,wall_ms,scheduled_cpu_ms,block,configuration,trace
+app_main_interval,bindApplication to fully drawn,190073180069266,1233.086231,292.575160,D1,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-53-36.perfetto-trace
+state:D,D,190073180069266,376.099306,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-53-36.perfetto-trace
+state:R,R,190073180069266,66.114075,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-53-36.perfetto-trace
+state:R+,R+,190073180069266,23.947532,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-53-36.perfetto-trace
+state:Running,Running,190073180069266,292.575160,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-53-36.perfetto-trace
+state:S,S,190073180069266,474.350158,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-53-36.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190079717378575,616.775077,221.649160,D1,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-53-42.perfetto-trace
+state:D,D,190079717378575,143.450386,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-53-42.perfetto-trace
+state:R,R,190079717378575,52.695310,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-53-42.perfetto-trace
+state:R+,R+,190079717378575,15.333602,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-53-42.perfetto-trace
+state:Running,Running,190079717378575,221.649160,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-53-42.perfetto-trace
+state:S,S,190079717378575,183.646619,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-53-42.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190084416430883,700.705153,213.358136,D1,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-53-47.perfetto-trace
+state:D,D,190084416430883,80.711003,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-53-47.perfetto-trace
+state:R,R,190084416430883,48.837471,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-53-47.perfetto-trace
+state:R+,R+,190084416430883,12.042538,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-53-47.perfetto-trace
+state:Running,Running,190084416430883,213.358136,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-53-47.perfetto-trace
+state:S,S,190084416430883,345.756005,0.000000,D1,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-53-47.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190346426541898,1565.753539,281.439694,D2,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-58-09.perfetto-trace
+state:D,D,190346426541898,469.500851,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-58-09.perfetto-trace
+state:R,R,190346426541898,46.714990,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-58-09.perfetto-trace
+state:R+,R+,190346426541898,15.393383,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-58-09.perfetto-trace
+state:Running,Running,190346426541898,281.439694,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-58-09.perfetto-trace
+state:S,S,190346426541898,752.704621,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-08-58-09.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190362732840130,896.254077,221.502382,D2,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-58-25.perfetto-trace
+state:D,D,190362732840130,61.795078,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-58-25.perfetto-trace
+state:R,R,190362732840130,67.033314,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-58-25.perfetto-trace
+state:R+,R+,190362732840130,14.155850,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-58-25.perfetto-trace
+state:Running,Running,190362732840130,221.502382,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-58-25.perfetto-trace
+state:S,S,190362732840130,531.767453,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-08-58-25.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190373764940669,704.711385,202.942065,D2,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-58-36.perfetto-trace
+state:D,D,190373764940669,66.174535,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-58-36.perfetto-trace
+state:R,R,190373764940669,33.236152,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-58-36.perfetto-trace
+state:R+,R+,190373764940669,15.867937,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-58-36.perfetto-trace
+state:Running,Running,190373764940669,202.942065,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-58-36.perfetto-trace
+state:S,S,190373764940669,386.490696,0.000000,D2,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-08-58-36.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190776367004155,1218.631923,280.992464,D3,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-09-05-19.perfetto-trace
+state:D,D,190776367004155,249.776074,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-09-05-19.perfetto-trace
+state:R,R,190776367004155,65.347617,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-09-05-19.perfetto-trace
+state:R+,R+,190776367004155,18.606994,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-09-05-19.perfetto-trace
+state:Running,Running,190776367004155,280.992464,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-09-05-19.perfetto-trace
+state:S,S,190776367004155,603.908774,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter000_2026-11-07-09-05-19.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190796703219463,867.882847,229.912866,D3,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-09-05-39.perfetto-trace
+state:D,D,190796703219463,155.584619,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-09-05-39.perfetto-trace
+state:R,R,190796703219463,50.697607,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-09-05-39.perfetto-trace
+state:R+,R+,190796703219463,23.972293,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-09-05-39.perfetto-trace
+state:Running,Running,190796703219463,229.912866,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-09-05-39.perfetto-trace
+state:S,S,190796703219463,407.715462,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter001_2026-11-07-09-05-39.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190817238935465,1138.726231,226.538087,D3,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-09-06-00.perfetto-trace
+state:D,D,190817238935465,287.582225,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-09-06-00.perfetto-trace
+state:R,R,190817238935465,31.950612,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-09-06-00.perfetto-trace
+state:R+,R+,190817238935465,12.085229,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-09-06-00.perfetto-trace
+state:Running,Running,190817238935465,226.538087,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-09-06-00.perfetto-trace
+state:S,S,190817238935465,580.570078,0.000000,D3,D,StartupBenchmark_coldStartupNoCompilation_iter002_2026-11-07-09-06-00.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190124324978808,1103.189923,173.665320,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-54-27.perfetto-trace
+state:D,D,190124324978808,368.552770,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-54-27.perfetto-trace
+state:R,R,190124324978808,43.466692,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-54-27.perfetto-trace
+state:R+,R+,190124324978808,13.433607,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-54-27.perfetto-trace
+state:Running,Running,190124324978808,173.665320,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-54-27.perfetto-trace
+state:S,S,190124324978808,504.071534,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-54-27.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190130171251501,763.871692,175.936170,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-54-33.perfetto-trace
+state:D,D,190130171251501,169.602230,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-54-33.perfetto-trace
+state:R,R,190130171251501,55.330907,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-54-33.perfetto-trace
+state:R+,R+,190130171251501,26.379766,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-54-33.perfetto-trace
+state:Running,Running,190130171251501,175.936170,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-54-33.perfetto-trace
+state:S,S,190130171251501,336.622619,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-54-33.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190135378796732,641.290154,159.968159,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-54-38.perfetto-trace
+state:D,D,190135378796732,101.318614,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-54-38.perfetto-trace
+state:R,R,190135378796732,33.361545,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-54-38.perfetto-trace
+state:R+,R+,190135378796732,14.090457,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-54-38.perfetto-trace
+state:Running,Running,190135378796732,159.968159,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-54-38.perfetto-trace
+state:S,S,190135378796732,332.551379,0.000000,E1,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-54-38.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190454257166520,996.700615,192.954023,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-59-57.perfetto-trace
+state:D,D,190454257166520,287.460691,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-59-57.perfetto-trace
+state:R,R,190454257166520,59.292910,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-59-57.perfetto-trace
+state:R+,R+,190454257166520,35.159454,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-59-57.perfetto-trace
+state:Running,Running,190454257166520,192.954023,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-59-57.perfetto-trace
+state:S,S,190454257166520,421.833537,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-59-57.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190469250837675,788.157769,176.522527,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-00-12.perfetto-trace
+state:D,D,190469250837675,116.733467,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-00-12.perfetto-trace
+state:R,R,190469250837675,43.660300,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-00-12.perfetto-trace
+state:R+,R+,190469250837675,18.855476,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-00-12.perfetto-trace
+state:Running,Running,190469250837675,176.522527,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-00-12.perfetto-trace
+state:S,S,190469250837675,432.385999,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-00-12.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190482221296368,914.721308,185.687843,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-00-25.perfetto-trace
+state:D,D,190482221296368,158.742849,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-00-25.perfetto-trace
+state:R,R,190482221296368,45.403534,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-00-25.perfetto-trace
+state:R+,R+,190482221296368,21.681617,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-00-25.perfetto-trace
+state:Running,Running,190482221296368,185.687843,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-00-25.perfetto-trace
+state:S,S,190482221296368,503.205465,0.000000,E2,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-00-25.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190557280008757,997.158769,170.813930,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-01-40.perfetto-trace
+state:D,D,190557280008757,315.180765,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-01-40.perfetto-trace
+state:R,R,190557280008757,36.166855,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-01-40.perfetto-trace
+state:R+,R+,190557280008757,17.999986,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-01-40.perfetto-trace
+state:Running,Running,190557280008757,170.813930,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-01-40.perfetto-trace
+state:S,S,190557280008757,456.997233,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-01-40.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190574596231219,1087.392924,192.428292,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-01-57.perfetto-trace
+state:D,D,190574596231219,165.468231,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-01-57.perfetto-trace
+state:R,R,190574596231219,73.422698,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-01-57.perfetto-trace
+state:R+,R+,190574596231219,21.367546,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-01-57.perfetto-trace
+state:Running,Running,190574596231219,192.428292,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-01-57.perfetto-trace
+state:S,S,190574596231219,634.706157,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-01-57.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190590396658297,841.931077,172.746688,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-02-13.perfetto-trace
+state:D,D,190590396658297,131.948612,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-02-13.perfetto-trace
+state:R,R,190590396658297,42.487778,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-02-13.perfetto-trace
+state:R+,R+,190590396658297,25.527453,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-02-13.perfetto-trace
+state:Running,Running,190590396658297,172.746688,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-02-13.perfetto-trace
+state:S,S,190590396658297,469.220546,0.000000,E3,E,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-02-13.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190185048820119,1191.750077,185.511765,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-55-28.perfetto-trace
+state:D,D,190185048820119,156.038075,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-55-28.perfetto-trace
+state:R,R,190185048820119,64.768465,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-55-28.perfetto-trace
+state:R+,R+,190185048820119,28.517385,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-55-28.perfetto-trace
+state:Running,Running,190185048820119,185.511765,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-55-28.perfetto-trace
+state:S,S,190185048820119,756.914387,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-55-28.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190193285400043,882.297923,177.057376,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-55-36.perfetto-trace
+state:D,D,190193285400043,118.522304,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-55-36.perfetto-trace
+state:R,R,190193285400043,43.772158,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-55-36.perfetto-trace
+state:R+,R+,190193285400043,16.505778,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-55-36.perfetto-trace
+state:Running,Running,190193285400043,177.057376,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-55-36.perfetto-trace
+state:S,S,190193285400043,526.440307,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-55-36.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190198744022889,796.455385,159.126999,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-55-41.perfetto-trace
+state:D,D,190198744022889,116.949540,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-55-41.perfetto-trace
+state:R,R,190198744022889,31.664925,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-55-41.perfetto-trace
+state:R+,R+,190198744022889,25.048307,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-55-41.perfetto-trace
+state:Running,Running,190198744022889,159.126999,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-55-41.perfetto-trace
+state:S,S,190198744022889,463.665614,0.000000,F1,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-55-41.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190273280521278,995.852000,170.392084,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-56-56.perfetto-trace
+state:D,D,190273280521278,207.765770,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-56-56.perfetto-trace
+state:R,R,190273280521278,39.075461,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-56-56.perfetto-trace
+state:R+,R+,190273280521278,7.558770,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-56-56.perfetto-trace
+state:Running,Running,190273280521278,170.392084,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-56-56.perfetto-trace
+state:S,S,190273280521278,571.059915,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-08-56-56.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190283605448741,773.642077,163.882998,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-57-06.perfetto-trace
+state:D,D,190283605448741,88.706390,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-57-06.perfetto-trace
+state:R,R,190283605448741,33.949539,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-57-06.perfetto-trace
+state:R+,R+,190283605448741,13.781921,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-57-06.perfetto-trace
+state:Running,Running,190283605448741,163.882998,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-57-06.perfetto-trace
+state:S,S,190283605448741,473.321229,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-08-57-06.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190293274431203,771.847923,163.652678,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-57-16.perfetto-trace
+state:D,D,190293274431203,74.952003,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-57-16.perfetto-trace
+state:R,R,190293274431203,55.593307,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-57-16.perfetto-trace
+state:R+,R+,190293274431203,4.514317,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-57-16.perfetto-trace
+state:Running,Running,190293274431203,163.652678,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-57-16.perfetto-trace
+state:S,S,190293274431203,473.135618,0.000000,F2,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-08-57-16.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190688524856688,941.603692,186.601830,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-03-51.perfetto-trace
+state:D,D,190688524856688,230.754541,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-03-51.perfetto-trace
+state:R,R,190688524856688,40.590008,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-03-51.perfetto-trace
+state:R+,R+,190688524856688,29.068466,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-03-51.perfetto-trace
+state:Running,Running,190688524856688,186.601830,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-03-51.perfetto-trace
+state:S,S,190688524856688,454.588847,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter000_2026-11-07-09-03-51.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190707306497074,1022.161461,183.384757,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-04-10.perfetto-trace
+state:D,D,190707306497074,237.949925,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-04-10.perfetto-trace
+state:R,R,190707306497074,62.493313,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-04-10.perfetto-trace
+state:R+,R+,190707306497074,21.058156,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-04-10.perfetto-trace
+state:Running,Running,190707306497074,183.384757,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-04-10.perfetto-trace
+state:S,S,190707306497074,517.275310,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter001_2026-11-07-09-04-10.perfetto-trace
+app_main_interval,bindApplication to fully drawn,190725530354844,1017.280385,177.320138,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-04-28.perfetto-trace
+state:D,D,190725530354844,102.840005,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-04-28.perfetto-trace
+state:R,R,190725530354844,65.588005,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-04-28.perfetto-trace
+state:R+,R+,190725530354844,16.457619,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-04-28.perfetto-trace
+state:Running,Running,190725530354844,177.320138,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-04-28.perfetto-trace
+state:S,S,190725530354844,655.074618,0.000000,F3,F,StartupBenchmark_coldStartupWithBaselineProfile_iter002_2026-11-07-09-04-28.perfetto-trace

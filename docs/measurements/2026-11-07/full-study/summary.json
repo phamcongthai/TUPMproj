@@ -1,0 +1,122 @@
+﻿[
+    {
+        "experiment":  "A-eager-unoptimized",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  2234.8707560000003,
+        "minimumMs":  2074.155504,
+        "maximumMs":  2582.425213,
+        "meanMs":  2252.2884372,
+        "apkBytes":  16096962,
+        "runs":  10
+    },
+    {
+        "experiment":  "A-eager-unoptimized",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  1562.0924479999999,
+        "minimumMs":  1386.970524,
+        "maximumMs":  2239.007128,
+        "meanMs":  1673.1121749,
+        "apkBytes":  16096962,
+        "runs":  10
+    },
+    {
+        "experiment":  "B-lazy-unoptimized",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  1902.4698985,
+        "minimumMs":  1188.675641,
+        "maximumMs":  2558.657186,
+        "meanMs":  1805.2936479,
+        "apkBytes":  16096962,
+        "runs":  10
+    },
+    {
+        "experiment":  "B-lazy-unoptimized",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  1273.5039155,
+        "minimumMs":  783.095536,
+        "maximumMs":  1855.112463,
+        "meanMs":  1269.5892797000001,
+        "apkBytes":  16096962,
+        "runs":  10
+    },
+    {
+        "experiment":  "C-lazy-r8",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  1090.6492935,
+        "minimumMs":  986.709229,
+        "maximumMs":  1443.516927,
+        "meanMs":  1117.8253197,
+        "apkBytes":  2746797,
+        "runs":  10
+    },
+    {
+        "experiment":  "C-lazy-r8",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  789.428343,
+        "minimumMs":  671.299479,
+        "maximumMs":  1141.150818,
+        "meanMs":  843.58989850000012,
+        "apkBytes":  2746797,
+        "runs":  10
+    },
+    {
+        "experiment":  "D-baseline-no-aot",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  1045.9285095,
+        "minimumMs":  957.286239,
+        "maximumMs":  2284.682013,
+        "meanMs":  1171.1820112999999,
+        "apkBytes":  2746797,
+        "runs":  10
+    },
+    {
+        "experiment":  "D-baseline-no-aot",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  762.120318,
+        "minimumMs":  710.813796,
+        "maximumMs":  1625.968576,
+        "meanMs":  934.41483629999982,
+        "apkBytes":  2746797,
+        "runs":  10
+    },
+    {
+        "experiment":  "E-baseline-aot",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  867.5670075,
+        "minimumMs":  840.096823,
+        "maximumMs":  1035.320321,
+        "meanMs":  893.2995471,
+        "apkBytes":  2746797,
+        "runs":  10
+    },
+    {
+        "experiment":  "E-baseline-aot",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  805.2979515,
+        "minimumMs":  696.883362,
+        "maximumMs":  902.100751,
+        "meanMs":  799.8446305,
+        "apkBytes":  2746797,
+        "runs":  10
+    },
+    {
+        "experiment":  "F-baseline-startup-aot",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  882.2543025,
+        "minimumMs":  831.704307,
+        "maximumMs":  1110.269544,
+        "meanMs":  914.64913409999986,
+        "apkBytes":  2845159,
+        "runs":  10
+    },
+    {
+        "experiment":  "F-baseline-startup-aot",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  882.2543025,
+        "minimumMs":  694.903836,
+        "maximumMs":  1010.549677,
+        "meanMs":  847.97805359999984,
+        "apkBytes":  2845159,
+        "runs":  10
+    }
+]

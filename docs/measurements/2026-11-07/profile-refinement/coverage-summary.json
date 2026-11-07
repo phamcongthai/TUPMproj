@@ -1,0 +1,15 @@
+{
+  "baseline": {
+    "rawRules": 18169,
+    "uniqueRules": 17711,
+    "classes": 3934,
+    "loginRules": 85
+  },
+  "startup": {
+    "rawRules": 17925,
+    "uniqueRules": 17416,
+    "classes": 3900,
+    "loginRules": 85
+  },
+  "mergedBaselineUniqueRules": 17712
+}

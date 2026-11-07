@@ -1,0 +1,10 @@
+{
+  "stableCaseSensitive": true,
+  "phoneRules": 17977,
+  "emulatorRules": 17712,
+  "phoneOnlyRules": 433,
+  "emulatorOnlyRules": 168,
+  "phoneOnlyEdgeToEdgeRules": [
+    "Landroidx/activity/EdgeToEdgeApi29;->setUp(Landroidx/activity/SystemBarStyle;Landroidx/activity/SystemBarStyle;Landroid/view/Window;Landroid/view/View;ZZ)V"
+  ]
+}

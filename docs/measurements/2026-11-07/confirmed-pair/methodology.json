@@ -1,0 +1,13 @@
+﻿{
+    "renderer":  "SwiftShader",
+    "emulatorArguments":  "-no-window -no-audio -gpu swiftshader -no-snapshot-load -no-snapshot-save",
+    "confirmationOrder":  [
+                              "A1",
+                              "E1",
+                              "E2",
+                              "A2"
+                          ],
+    "gradleStoppedBeforeConfirmation":  true,
+    "scenario":  "Logged out, login screen ready",
+    "iterationsPerBlock":  5
+}

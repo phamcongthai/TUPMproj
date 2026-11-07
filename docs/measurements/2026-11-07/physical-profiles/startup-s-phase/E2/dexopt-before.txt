@@ -1,0 +1,11 @@
+﻿>       installReason=0
+        firstInstallTime=2026-11-07 15:14:20
+>       uninstallReason=0
+        overlay paths:
+          /data/resource-cache/com.android.systemui-neutral-mUhN.frro
+> Dexopt state:
+    [com.example.jetpackcompose.benchmark]
+      path: /data/app/~~FbQArWcMs8OM26ev8obGNg==/com.example.jetpackcompose.benchmark-j7E-u-UrlAG0hOlgRm89Og==/base.apk
+>       arm64: [status=speed-profile] [reason=cmdline]
+        odex file size: base.art: 667Kb base.odex: 5689Kb base.vdex: 3830Kb 
+  

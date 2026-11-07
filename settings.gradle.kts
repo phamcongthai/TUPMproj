@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "JetpackCompose"
 include(":app")
+include(":macrobenchmark")

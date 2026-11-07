@@ -1,0 +1,7 @@
+﻿Starting: Intent { cmp=com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.example.jetpackcompose.benchmark/com.example.jetpackcompose.MainActivity
+TotalTime: 313
+WaitTime: 317
+Complete

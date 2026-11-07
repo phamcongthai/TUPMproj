@@ -1,0 +1,3 @@
+# Preserve original experiment bytes and generated profile checksums across platforms.
+/docs/measurements/** -text
+/app/src/main/profiles/** -text

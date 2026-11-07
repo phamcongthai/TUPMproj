@@ -1,0 +1,35 @@
+﻿IsStatusOverride: false
+ThermalEventListeners:
+	callbacks: 2
+	killed: false
+	broadcasts count: -1
+ThermalStatusListeners:
+	callbacks: 5
+	killed: false
+	broadcasts count: -1
+Thermal Status: 0
+Cached temperatures:
+	Temperature{mValue=52.945, mType=0, mName=CPU, mStatus=0}
+	Temperature{mValue=52.593, mType=1, mName=GPU, mStatus=0}
+	Temperature{mValue=52.593, mType=9, mName=NPU, mStatus=0}
+	Temperature{mValue=42.141, mType=3, mName=SKIN, mStatus=0}
+	Temperature{mValue=36.0, mType=2, mName=BATTERY, mStatus=0}
+	Temperature{mValue=38.12, mType=5, mName=POWER_AMPLIFIER, mStatus=0}
+HAL Ready: true
+HAL connection:
+	ThermalHAL 2.0 connected: yes
+Current temperatures from HAL:
+	Temperature{mValue=48.94, mType=0, mName=CPU, mStatus=0}
+	Temperature{mValue=48.94, mType=1, mName=GPU, mStatus=0}
+	Temperature{mValue=38.0, mType=2, mName=BATTERY, mStatus=0}
+	Temperature{mValue=45.574, mType=3, mName=SKIN, mStatus=0}
+	Temperature{mValue=41.22, mType=5, mName=POWER_AMPLIFIER, mStatus=0}
+	Temperature{mValue=48.94, mType=9, mName=NPU, mStatus=0}
+Current cooling devices from HAL:
+Temperature static thresholds from HAL:
+	{.type = CPU, .name = CPU, .hotThrottlingThresholds = [NaN, NaN, NaN, 85.0, 90.0, 100.0, 117.0], .coldThrottlingThresholds = [NaN, NaN, NaN, NaN, NaN, NaN, NaN], .vrThrottlingThreshold = 85.0}
+	{.type = GPU, .name = GPU, .hotThrottlingThresholds = [NaN, NaN, NaN, 85.0, 90.0, 100.0, 117.0], .coldThrottlingThresholds = [NaN, NaN, NaN, NaN, NaN, NaN, NaN], .vrThrottlingThreshold = 85.0}
+	{.type = BATTERY, .name = BATTERY, .hotThrottlingThresholds = [NaN, NaN, NaN, 50.0, 55.0, 59.0, 60.0], .coldThrottlingThresholds = [NaN, NaN, NaN, NaN, NaN, NaN, NaN], .vrThrottlingThreshold = 50.0}
+	{.type = SKIN, .name = SKIN, .hotThrottlingThresholds = [NaN, NaN, NaN, 50.0, 70.0, 80.0, 90.0], .coldThrottlingThresholds = [NaN, NaN, NaN, NaN, NaN, NaN, NaN], .vrThrottlingThreshold = 50.0}
+	{.type = POWER_AMPLIFIER, .name = POWER_AMPLIFIER, .hotThrottlingThresholds = [NaN, NaN, NaN, 68.0, 90.0, 100.0, 110.0], .coldThrottlingThresholds = [NaN, NaN, NaN, NaN, NaN, NaN, NaN], .vrThrottlingThreshold = NaN}
+	{.type = NPU, .name = NPU, .hotThrottlingThresholds = [NaN, NaN, NaN, 85.0, 90.0, 100.0, 117.0], .coldThrottlingThresholds = [NaN, NaN, NaN, NaN, NaN, NaN, NaN], .vrThrottlingThreshold = NaN}

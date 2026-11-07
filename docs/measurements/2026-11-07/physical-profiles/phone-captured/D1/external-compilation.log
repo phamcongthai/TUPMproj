@@ -1,0 +1,3 @@
+﻿Broadcasting: Intent { act=androidx.profileinstaller.action.SKIP_FILE flg=0x400000 cmp=com.example.jetpackcompose.benchmark/androidx.profileinstaller.ProfileInstallReceiver (has extras) }
+Broadcast completed: result=10
+Success

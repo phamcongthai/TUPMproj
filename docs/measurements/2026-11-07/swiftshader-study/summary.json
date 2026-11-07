@@ -1,0 +1,142 @@
+﻿[
+    {
+        "experiment":  "A-eager-unoptimized",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  1803.786755,
+        "minimumMs":  1493.7422,
+        "maximumMs":  3402.369511,
+        "meanMs":  2213.1900128,
+        "apkBytes":  16096962,
+        "runs":  5
+    },
+    {
+        "experiment":  "A-eager-unoptimized",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  1129.66269,
+        "minimumMs":  1012.423606,
+        "maximumMs":  2284.614602,
+        "meanMs":  1468.1302456,
+        "apkBytes":  16096962,
+        "runs":  5
+    },
+    {
+        "experiment":  "B-lazy-unoptimized",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  1796.061948,
+        "minimumMs":  1734.777067,
+        "maximumMs":  2091.828952,
+        "meanMs":  1875.489648,
+        "apkBytes":  16096962,
+        "runs":  5
+    },
+    {
+        "experiment":  "B-lazy-unoptimized",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  1249.509565,
+        "minimumMs":  1173.510919,
+        "maximumMs":  1455.750207,
+        "meanMs":  1270.08374,
+        "apkBytes":  16096962,
+        "runs":  5
+    },
+    {
+        "experiment":  "C-lazy-r8",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  3906.06448,
+        "minimumMs":  1953.253677,
+        "maximumMs":  5390.878756,
+        "meanMs":  3838.385518,
+        "apkBytes":  2746797,
+        "runs":  5
+    },
+    {
+        "experiment":  "C-lazy-r8",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  2615.296559,
+        "minimumMs":  1352.240144,
+        "maximumMs":  4083.539645,
+        "meanMs":  2653.9005674,
+        "apkBytes":  2746797,
+        "runs":  5
+    },
+    {
+        "experiment":  "D-baseline-no-aot",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  2270.084276,
+        "minimumMs":  2188.414583,
+        "maximumMs":  3384.883902,
+        "meanMs":  2635.044659,
+        "apkBytes":  2746797,
+        "runs":  5
+    },
+    {
+        "experiment":  "D-baseline-no-aot",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  1659.755039,
+        "minimumMs":  1534.055591,
+        "maximumMs":  2356.337136,
+        "meanMs":  1786.0314021999998,
+        "apkBytes":  2746797,
+        "runs":  5
+    },
+    {
+        "experiment":  "E-baseline-aot",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  2129.722636,
+        "minimumMs":  1688.949789,
+        "maximumMs":  2169.57711,
+        "meanMs":  2004.0249632000002,
+        "apkBytes":  2746797,
+        "runs":  5
+    },
+    {
+        "experiment":  "E-baseline-aot",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  1722.364565,
+        "minimumMs":  1506.283355,
+        "maximumMs":  1785.416835,
+        "meanMs":  1664.7911749999998,
+        "apkBytes":  2746797,
+        "runs":  5
+    },
+    {
+        "experiment":  "F-baseline-startup-aot",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  2145.90068,
+        "minimumMs":  2044.102431,
+        "maximumMs":  2552.894861,
+        "meanMs":  2245.3255742,
+        "apkBytes":  2845159,
+        "runs":  5
+    },
+    {
+        "experiment":  "F-baseline-startup-aot",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  1848.157783,
+        "minimumMs":  1624.899695,
+        "maximumMs":  2246.624497,
+        "meanMs":  1938.7354473999999,
+        "apkBytes":  2845159,
+        "runs":  5
+    },
+    {
+        "experiment":  "G-baseline-without-r8",
+        "metric":  "timeToFullDisplayMs",
+        "medianMs":  4436.249779,
+        "minimumMs":  2208.242135,
+        "maximumMs":  4935.898938,
+        "meanMs":  3711.006469,
+        "apkBytes":  16096962,
+        "runs":  5
+    },
+    {
+        "experiment":  "G-baseline-without-r8",
+        "metric":  "timeToInitialDisplayMs",
+        "medianMs":  3573.528399,
+        "minimumMs":  1867.658463,
+        "maximumMs":  4526.82675,
+        "meanMs":  3191.936045,
+        "apkBytes":  16096962,
+        "runs":  5
+    }
+]

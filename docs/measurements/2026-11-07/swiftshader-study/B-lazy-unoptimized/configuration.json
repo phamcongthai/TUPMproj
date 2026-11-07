@@ -1,0 +1,8 @@
+﻿{
+    "r8":  "false",
+    "name":  "B-lazy-unoptimized",
+    "profiles":  "false",
+    "method":  "coldStartupNoCompilation",
+    "lazy":  "true",
+    "startup":  "false"
+}

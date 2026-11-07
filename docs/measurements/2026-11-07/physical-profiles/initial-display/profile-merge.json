@@ -1,0 +1,16 @@
+﻿{
+  "sources": [
+    {
+      "path": "build\\startup-study\\physical-initial-display-20261107\\inputs\\baseline-prof.txt",
+      "sha256": "bcef6dddc92db3ff75549c698850ddb8461266a147457602ec76eebbe7f96e83",
+      "rules": 17977
+    },
+    {
+      "path": "build\\startup-study\\physical-initial-display-20261107\\inputs\\startup-prof.txt",
+      "sha256": "05483c3fcafc5f6499fed8bfc0d15e3e2e5c205294f82a37bf196983036ef849",
+      "rules": 17249
+    }
+  ],
+  "mergedRules": 18047,
+  "sha256": "3e84d0048de7dfbf464d0853375f01d8af6ee2d1d2c1449ba44a89dd3e705739"
+}
