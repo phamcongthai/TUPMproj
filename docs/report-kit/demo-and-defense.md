@@ -1,83 +1,64 @@
-# Kịch bản demo khoảng 7 phút và câu hỏi bảo vệ
+﻿# Demo 7 phút và câu hỏi bảo vệ
 
-## Chuẩn bị trước buổi trình bày
+**Mục tiêu demo:** chỉ ra hai profile đã được áp dụng và giải thích kết quả đối chứng; không trình diễn toàn bộ nghiệp vụ đặt đồ ăn.
 
-Mở sẵn HTML hướng dẫn, hai hình TTID/TTFD, CSV và JSON gốc. Mở repo trong Android Studio đúng thư mục `food-app`; chuẩn bị emulator đã boot hoặc điện thoại mở khóa. Dùng APK E đã lưu để tránh phải chờ R8 build tại buổi bảo vệ. Không đăng nhập tài khoản thật hoặc gửi giao dịch chỉ để trình diễn startup.
+Nguồn số liệu: [báo cáo cập nhật](../physical-profile-results.md). Không dùng bảng A/E máy ảo cũ để quy công riêng cho profile.
 
-Kiểm tra trước luồng Login → Register → Login. Chuẩn bị APK A/E và đúng test APK nếu muốn chạy lại benchmark; toàn bộ A–G có thể mất nhiều thời gian, không nên hứa chạy hết trong vài phút. Khi trình bày dữ liệu đã thu, nói rõ đó là kết quả thực nghiệm ngày 07/11/2026, không nói là số đang đo trực tiếp.
+## Chuẩn bị
 
-## Trình tự
+Mở app benchmark ở Login, nguồn `app/build.gradle.kts`, hai thư mục profile, JSON kiểm tra DEX và bảng/biểu đồ của phiên xác nhận Startup. Chuẩn bị APK từ trước; build R8 và đo 20 lượt mất nhiều phút, không đưa vào kịch bản 7 phút.
 
-| Thời gian dự kiến | Thao tác | Điểm cần giải thích |
+APK hiện tại trên máy thực nghiệm: `build/artifacts/food-app-initial-display-startup-profile.apk`. Tệp này thuộc thư mục build nên không nằm trong Git. Khi clone mới, mở thư mục gốc có `settings.gradle.kts`, cài SDK theo Gradle, rồi build bản benchmark:
+
+```powershell
+$env:JAVA_HOME='C:\Program Files\Android\Android Studio\jbr'
+.\gradlew.bat :app:assembleBenchmark :macrobenchmark:assembleBenchmark --max-workers=2
+```
+
+APK tạo ở `app/build/outputs/apk/benchmark/app-benchmark.apk`; bật đủ profile theo cấu hình mặc định. Bản debug chạy bằng Studio không thay thế bản benchmark khi đánh giá tối ưu này. Cài và mở app không tự chứng minh đã AOT như phép đo; xem log chuẩn bị ART và hướng dẫn trong nhật ký.
+
+## Trình tự trình bày
+
+| Thời gian | Thao tác | Điều phải nói |
 |---|---|---|
-| 0:00–0:45 | Mở sơ đồ 2 và app Login | Phạm vi là chưa có token mở đến Login, không phải toàn bộ đặt món |
-| 0:45–2:15 | Mở sơ đồ trước/sau; chỉ AuthRepository và AuthPreference | Lazy dời chi phí chưa cần; có token vẫn kiểm tra tài khoản |
-| 2:15–3:15 | Mở Gradle, generator và sơ đồ 6–7 | R8 khác ART; Baseline khác Startup; profile sinh từ chạy thật |
-| 3:15–4:00 | Bấm Đăng ký rồi quay Login | Kiểm tra điều hướng sau sửa; chưa kiểm thử đăng nhập/thanh toán thành công |
-| 4:00–5:30 | Mở JSON A1, E1 và hai biểu đồ | 10 cold starts mỗi cấu hình gộp ABBA, đủ mọi lần, trung vị/min–max |
-| 5:30–6:15 | Chạy Export-StartupResults.ps1 | Tính lại từ dữ liệu gốc, không phát sinh số đo mới |
-| 6:15–7:00 | Mở bảng A–G và giới hạn | 14%/25,92% là gói E; F chưa thấy lợi ích thêm; cần xác nhận máy thật |
+| 0:00–0:45 | Mở Login và nêu đề tài | Phạm vi chưa đăng nhập → Login; TTID khác TTFD |
+| 0:45–2:00 | Chỉ hai profile và Gradle | Baseline cho ART biên dịch trước; Startup cho R8 bố trí DEX; hai cơ chế khác nhau |
+| 2:00–3:00 | Mở metadata/kiểm tra DEX | DEX đầu startup, MainActivity ở trong, checksum khớp; Baseline được đóng binary |
+| 3:00–3:30 | Login → Register → Login | Kiểm tra điều hướng sau build tối ưu, không gửi tài khoản/giao dịch |
+| 3:30–4:30 | Mở bảng Baseline D/E | Cùng APK, khác ART; TTID giảm 12,95%, TTFD giảm 22,86% trong phiên này |
+| 4:30–6:00 | Mở bảng hai phiên Startup và biểu đồ xác nhận | E/F cùng Baseline, chỉ thêm Startup; xác nhận đảo thứ tự giảm 7,66%/11,05%; trình bày cả số thăm dò và dao động |
+| 6:00–7:00 | Mở CSV, audit, giới hạn | Dữ liệu gốc được giữ; một thiết bị; không cộng phần trăm; không khẳng định thống kê hoặc mọi Android |
 
-Lệnh export và cài APK có trong guide phần 13. Mã vẽ sơ đồ là `build_diagrams.py`; không cần chạy Python lúc bảo vệ vì đã có PNG/SVG/HTML offline.
+Bằng chứng DEX: `docs/measurements/2026-11-07/physical-profiles/initial-display/startup-verification.json`.
 
-## Câu hỏi có thể gặp
+Dữ liệu xác nhận: `docs/measurements/2026-11-07/physical-profiles/initial-display/confirmation/` (results.md, CSV, JSON, audit, PNG). Đối chứng Baseline: `docs/measurements/2026-11-07/physical-profiles/phone-captured-idle/`.
 
-**1. Đề tài có gì ngoài làm một app đặt đồ ăn?**
+Có thể tạo lại bảng/biểu đồ từ thống kê và CSV đã lưu, không phát sinh số đo mới:
 
-App có sẵn là đối tượng nghiên cứu. Phần triển khai thêm là phân tích đường khởi động, lazy initialization, tối ưu build, sinh/đóng profile, module đo và thiết kế thực nghiệm đối chứng.
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/Export-ProfileEffects.ps1 -InputDirectory docs/measurements/2026-11-07/physical-profiles/initial-display/confirmation -OutputDirectory build/demo-confirmation -ProfilePairOnly
+```
 
-**2. Baseline Profile có phải thuật toán do nhóm đề xuất?**
+Đây là xuất lại dữ liệu, không phải benchmark trực tiếp hoặc chạy lại đầy đủ audit. Audit đầy đủ yêu cầu các Perfetto trace gốc; trace/APK trong build không được commit. Muốn có bộ trace mới trên máy khác phải thực hiện phép đo mới theo nhật ký và giữ thành phiên riêng.
 
-Không. Đây là kỹ thuật Android cung cấp. Nhóm nghiên cứu cơ chế, tích hợp và đánh giá trong một ứng dụng cụ thể.
+## Câu hỏi bảo vệ
 
-**3. Vì sao không dùng thời gian Install successfully?**
+**Đóng góp của nhóm là gì?** Nghiên cứu cơ chế có sẵn, tích hợp trên app gốc, xác định hành trình, thu profile, xây dựng đối chứng, đo trên điện thoại và phân tích kết quả. Không phát minh thuật toán ART/R8.
 
-Đó là cài APK. Người dùng mở app là sự kiện khác; nghiên cứu dùng StartupTimingMetric để đo TTID/TTFD.
+**Làm sao tách hai kỹ thuật?** Baseline: D/E cùng APK, từ verify sang Baseline + speed-profile. Startup: E/F cùng Baseline và mã app, bật thêm Startup ở F. Lazy/R8 giữ nguyên trong từng phép so sánh.
 
-**4. TTID và TTFD khác nhau thế nào?**
+**Tại sao không lấy thời gian Install successfully?** Đó là cài đặt, không phải khởi động. Phép đo dùng StartupTimingMetric, TTID và mốc ReportDrawn của Login.
 
-TTID là đến khung hình đầu. TTFD dùng mốc app báo sẵn sàng; ở đây ReportDrawn tại Login. Không dùng nó để nói đã tải xong thực đơn.
+**Tại sao Startup trước không cải thiện?** Bộ cũ đã được áp dụng nhưng chưa cho lợi ích thời gian. Nhóm thử thu ngay sau hiển thị ban đầu thay cho chờ Login và công việc muộn; bộ mới cho cải thiện ở hai phiên. Chưa cô lập riêng thời điểm thu là nguyên nhân duy nhất vì Baseline hợp nhất và bộ quy tắc cũng khác giữa các cặp build.
 
-**5. Lazy có loại bỏ hoàn toàn chi phí không?**
+**Có phải lúc nào Startup cũng giảm 20,49%?** Không. Đó là phiên thăm dò; phiên đảo thứ tự giảm TTID 7,66%, TTFD 11,05%. Giữ cả hai để thể hiện mức dao động, không chỉ chọn số lớn.
 
-Không, chi phí chuyển đến lần đầu cần đối tượng. Cần nghiên cứu thêm độ trễ thao tác đầu tiên để đánh giá toàn hành trình.
+**Có cộng 12,95% với 7,66% được không?** Không. Đó là hai phép so sánh/phiên khác nhau; chưa đo một hiệu quả tổng hợp tương ứng bằng cách cộng chúng.
 
-**6. Vì sao không chỉ đo một lần?**
+**APK nhỏ hơn hay RAM/pin tốt hơn chưa?** Không dùng gói giảm APK cũ để chứng minh profile. Với cặp Startup mới, APK F lớn hơn E. Chưa đo RAM/pin.
 
-Môi trường có nhiễu. Nhóm giữ nhiều lần đo và công bố phân bố; trung vị giảm ảnh hưởng của các lần cực chậm nhưng không xóa nhiễu hay thay thế kiểm định thống kê.
+**Đã kiểm tra toàn bộ app chưa?** Mới xác nhận startup và Login → Register → Login. Chưa kiểm thử end-to-end tài khoản, Google, menu, đặt món hoặc thanh toán.
 
-**7. 25,92% có phải mức tăng tốc riêng của Baseline Profile?**
+**Tại sao audit PASS chưa có nghĩa mọi máy đều nhanh hơn?** Audit kiểm tra số liệu, APK, chuẩn bị ART và trace. Khả năng khái quát/ý nghĩa thống kê cần thiết kế và dữ liệu bổ sung.
 
-Không. A/E thay đổi lazy, R8 và compilation/profile. Để tách riêng phải xác nhận các cặp như D/E trong nhiều đợt phù hợp.
-
-**8. Tại sao bảng thăm dò có cấu hình tối ưu lại chậm hơn?**
-
-Có biến động tải host do build giữa lượt, đặc điểm emulator và các đánh đổi kỹ thuật. Nhóm công bố các giá trị, rồi đo xác nhận A/E riêng với Gradle đã dừng. Chưa có bằng chứng để quy mọi chênh lệch thăm dò cho mã.
-
-**9. Startup Profile đã làm mà không bật thì có thất bại không?**
-
-Đã triển khai, kiểm tra đầu vào build và thử F. Lượt thăm dò chưa thấy lợi ích bổ sung, APK tăng. Chọn chưa bật là quyết định theo bằng chứng hiện có; không kết luận Startup Profile vô dụng nói chung.
-
-**10. A có đúng là app gốc không?**
-
-A tái hiện eager và tắt tối ưu bằng cờ trong cùng bộ mã có instrumentation. Nó không phải APK nguyên bản hoàn toàn; cả hai cùng có mốc ReportDrawn và hạ tầng đo.
-
-**11. Đo trên máy ảo có kết luận cho điện thoại được không?**
-
-Chưa. Nó chứng minh quy trình hoạt động và cho kết quả trong môi trường đó. Cần lặp lại trên thiết bị thật, nhiều đợt, ghi điều kiện rõ ràng.
-
-**12. Đã kiểm tra chức năng nào sau minify?**
-
-Đã mở Login và điều hướng Register rồi quay lại. Chưa có bằng chứng end-to-end cho tài khoản, Google, menu, đặt hàng hoặc thanh toán; keep rule Gson vẫn cần kiểm thử các luồng dữ liệu đó khi mở rộng.
-
-**13. Đã giảm RAM/pin chưa?**
-
-Chưa đo. APK nhỏ hơn không tự chứng minh RAM/pin thấp hơn.
-
-**14. Profile dùng khi nào?**
-
-Trong benchmark, Partial/Require chuẩn bị profile/compilation trước lượt đo. Trong cài đặt thực tế còn phụ thuộc cách phân phối/cài và ART; không coi sideload bình thường luôn có ngay trạng thái AOT tương đương.
-
-**15. Bằng chứng nào giúp người khác kiểm tra kết luận?**
-
-JSON chứa toàn bộ runs và context, instrumentation log, cấu hình A–G, APK/hash, script tái lập và script tính lại. Hash nhận diện tệp; chất lượng thiết kế thí nghiệm vẫn cần đánh giá riêng.
+**Bản README học ghi khác thì dùng số nào?** Hai README học được giữ nguyên theo yêu cầu đọc/feedback. Kết luận hiện tại lấy từ `docs/physical-profile-results.md` và dữ liệu được liên kết tại đó.

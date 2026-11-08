@@ -1,4 +1,6 @@
-﻿# Kiểm chứng Baseline Profiles và Startup Profiles trên Food App
+# Kiểm chứng Baseline Profiles và Startup Profiles trên Food App
+
+[B?n ch?t m?c ti?u, k?t qu? v? t?i li?u b?n giao](project-handoff.md).
 
 **Đề tài:** Nghiên cứu và thực nghiệm tối ưu hiệu năng khởi động ứng dụng Android bằng Baseline Profiles và Startup Profiles trên ứng dụng đặt đồ ăn.
 

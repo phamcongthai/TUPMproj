@@ -12,7 +12,9 @@ try {
         New-Item -ItemType Directory -Force (Split-Path -Parent $destination) | Out-Null
         Copy-Item -LiteralPath $Source -Destination $destination
     }
-    foreach($file in @('docs/physical-profile-results.md','docs/profile-refinement-notes.md','docs/startup-profile-applied.md')){Copy-Evidence $file $file}
+    foreach($file in @('docs/physical-profile-results.md','docs/profile-refinement-notes.md','docs/startup-profile-applied.md',
+        'docs/project-handoff.md','docs/report-kit/report-outline.md','docs/report-kit/demo-and-defense.md',
+        'docs/report-kit/results/results.md')){Copy-Evidence $file $file}
     $measurements='docs/measurements/2026-11-07/physical-profiles'
     Get-ChildItem $measurements -Recurse -File | ForEach-Object {
         Copy-Evidence $_.FullName ($_.FullName.Substring($root.Length+1))

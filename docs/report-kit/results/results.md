@@ -1,4 +1,6 @@
-﻿# Results recomputed from raw Macrobenchmark JSON
+# Historical emulator results ? combined optimization package
+
+**Historical data only:** the CSV and PNG files in this folder describe the old combined A/E emulator study. They do not isolate either profile. Use the [current physical-device report](../../physical-profile-results.md) and [final project handoff](../../project-handoff.md) for the report/demo. New Startup confirmation observed lower median TTID/TTFD; these old data remain unchanged for transparency.
 
 ABBA: A1 -> E1 -> E2 -> A2. Logged-out cold start. API 37 SwiftShader emulator (recorded study).
 All observations retained; median calculated over both blocks together.
@@ -14,4 +16,4 @@ E combines deferred initialization, R8/resource shrinking and Baseline Profile A
 This comparison does not isolate the effect of any single technique.
 Ranges overlap. No statistical significance or physical-device speedup is established.
 The chart lines mark medians, not confidence intervals. Points are individual starts.
-Startup Profile was tested separately in exploratory case F and is disabled by default.
+At the time of this historical emulator study, the exploratory Startup case did not show a benefit. This is not the current default or final physical-device conclusion.
